@@ -1,5 +1,9 @@
 const signupBtn = document.querySelector("#signupBtn")
 const signupForm = document.querySelector("#signupForm")
+const firstName = document.querySelector("#firstName")
+const lastName = document.querySelector("#lastName")
+const email = document.querySelector("#email")
+const password = document.querySelector("#password")
 
 signupBtn.addEventListener("click", async (event) => {
     event.preventDefault()
@@ -8,17 +12,19 @@ signupBtn.addEventListener("click", async (event) => {
 
         console.log("signup");
 
-        // insert user info
-        const { error } = await user
-            .from('user_data')
-            .insert({ id: 1, name: 'Mordor' })
-
         // signup user
-        const { data, error } = await supabase.auth.signUp({
-            email: 'example@email.com',
-            password: 'example-password',
+        const { data, error: signupError } = await client.auth.signUp({
+            email: email.value,
+            password: password.value,
         })
 
+        if (signupError) {
+            console.log(signupError);
+        }
+
+        console.log(data.id);
+
+      
     } catch (error) {
         console.log(error);
     }
