@@ -183,6 +183,14 @@ body {
   .signup-text a:hover {
     text-decoration: underline;
   }
+
+  .emptyInput{
+      border: 1px solid red !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.2) !important;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out !important;
+  }
   
   
   /* Small Screens */
