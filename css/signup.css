@@ -1,0 +1,204 @@
+body {
+    background-color: #fffaf1;
+    font-family: Arial, sans-serif;
+    color: #202b3c;
+  }
+  
+  /* Logo */
+  
+  .signup-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #202b3c;
+  }
+  
+  .signup-logo i {
+    color: #f5a623;
+    margin-right: 5px;
+  }
+  
+  .signup-logo span {
+    color: #f5a623;
+  }
+  
+  
+  /* Card */
+  
+  .signup-card {
+    max-width: 480px;
+    border-radius: 18px;
+    background-color: #ffffff;
+  }
+  
+  
+  /* Header Icon */
+  
+  .chef-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background-color: #fff0d5;
+    color: #f5a623;
+  
+    font-size: 22px;
+  }
+  
+  
+  /* Inputs */
+  
+  .input-group-custom {
+    min-height: 50px;
+  
+    display: flex;
+    align-items: center;
+  
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+  
+    padding: 0 14px;
+  
+    background-color: #fff;
+  }
+  
+  .input-group-custom > i {
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .input-group-custom .form-control {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-height: 48px;
+  }
+  
+  .input-group-custom:focus-within {
+    border-color: #f5a623;
+  }
+  
+  
+  /* Password Button */
+  
+  .password-toggle {
+    border: none;
+    background: transparent;
+    color: #888;
+    padding: 5px;
+  }
+  
+  .password-toggle:hover {
+    color: #f5a623;
+  }
+  
+  
+  /* Terms */
+  
+  .form-check-input:checked {
+    background-color: #f5a623;
+    border-color: #f5a623;
+  }
+  
+  .terms-link {
+    color: #f5a623;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  
+  /* Signup Button */
+  
+  .signup-submit {
+    min-height: 50px;
+  
+    background-color: #f5a623;
+    color: #fff;
+  
+    border: none;
+    border-radius: 10px;
+  
+    font-weight: 600;
+  }
+  
+  .signup-submit:hover {
+    background-color: #df9013;
+    color: #fff;
+  }
+  
+  
+  /* Divider */
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .divider span {
+    height: 1px;
+    background-color: #dee2e6;
+    flex: 1;
+  }
+  
+  .divider p {
+    margin: 0;
+    color: #999;
+    font-size: 13px;
+  }
+  
+  
+  /* Social Buttons */
+  
+  .social-btn {
+    min-height: 45px;
+  
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+  
+    border-radius: 9px;
+  }
+  
+  .social-btn:hover {
+    background-color: #f8f8f8;
+  }
+  
+  
+  /* Login Text */
+  
+  .signup-text {
+    color: #777;
+    font-size: 14px;
+  }
+  
+  .signup-text a {
+    color: #f5a623;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .signup-text a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* Small Screens */
+  
+  @media (max-width: 400px) {
+  
+    .signup-card .card-body {
+      padding: 25px 18px !important;
+    }
+  
+    .signup-logo {
+      font-size: 24px;
+    }
+  
+    .signup-card h1 {
+      font-size: 25px;
+    }
+  
+  }

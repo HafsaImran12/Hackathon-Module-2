@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>RecipeShare | Sign Up</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="../css/signup.css" />
+</head>
+
+<body>
+
+  <main
+    class="min-vh-100 d-flex flex-column justify-content-center align-items-center px-3 py-4"
+  >
+
+    <!-- Logo -->
+    <a href="../index.html" class="signup-logo mb-4 text-decoration-none">
+      <i class="fa-solid fa-cheese"></i>
+      Recipe<span>Share</span>
+    </a>
+
+    <!-- Signup Card -->
+    <div class="card signup-card border-0 shadow-sm w-100">
+
+      <div class="card-body p-4 p-sm-5">
+
+        <!-- Header -->
+        <div class="text-center mb-4">
+
+          <div class="chef-icon mx-auto mb-3">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+
+          <h1 class="fw-bold mb-2">Create Account</h1>
+
+          <p class="text-muted mb-0">
+            Join RecipeShare and start sharing your favorite recipes.
+          </p>
+
+        </div>
+
+        <!-- Form -->
+        <form id="signupForm">
+
+          <!-- First + Last Name -->
+          <div class="row g-3 mb-3">
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group-custom">
+                <i class="fa-regular fa-user"></i>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  class="form-control"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="input-group-custom">
+                <i class="fa-regular fa-user"></i>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  class="form-control"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Email -->
+          <div class="input-group-custom mb-3">
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Email address"
+              required
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="input-group-custom mb-3">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+
+            <button
+              type="button"
+              class="password-toggle"
+              id="togglePassword"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-group-custom mb-3">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control"
+              placeholder="Confirm password"
+              required
+            />
+
+            <button
+              type="button"
+              class="password-toggle"
+              id="toggleConfirmPassword"
+            >
+              <i class="fa-regular fa-eye"></i>
+            </button>
+
+          </div>
+
+          <!-- Terms -->
+          <div class="form-check mb-4">
+
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="terms"
+              required
+            />
+
+            <label class="form-check-label small" for="terms">
+              I agree to the
+              <a href="#" class="terms-link">Terms & Conditions</a>
+            </label>
+
+          </div>
+
+          <!-- Signup Button -->
+          <button
+            type="submit"
+            class="btn signup-submit w-100"
+          >
+            <i class="fa-solid fa-user-plus me-2"></i>
+            Create Account
+          </button>
+
+        </form>
+
+
+        <!-- Login -->
+        <p class="text-center signup-text mt-4 mb-0">
+          Already have an account?
+          <a href="login.html">Login</a>
+        </p>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+<!-- supabase cdn -->
+ <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<!-- supabase -->
+<script src="../js/supabase.js"></script>
+
+<!-- signup -->
+<script src="../js/signup.js"></script>
+
+
+</html>
