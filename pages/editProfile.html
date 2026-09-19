@@ -59,16 +59,16 @@
               <!-- AVATAR -->
 
               <div class="avatar-section">
-                <div class="avatar">HI</div>
+                <div class="avatar"></div>
 
-                <h5>Hafsa Imran</h5>
+                <h5></h5>
 
                 <p>Update your profile information</p>
               </div>
 
               <!-- FORM -->
 
-              <form id="editProfileForm">
+              <form id="updateProfileForm">
                 <div class="row g-4">
                   <!-- FIRST NAME -->
 
@@ -82,12 +82,9 @@
                       id="firstName"
                       class="form-control"
                       placeholder="Enter first name"
-                      value="Hafsa"
                       required
                     />
                   </div>
-
-                  <!-- LAST NAME -->
 
                   <div class="col-md-6">
                     <label for="lastName" class="form-label"> Last Name </label>
@@ -97,42 +94,33 @@
                       id="lastName"
                       class="form-control"
                       placeholder="Enter last name"
-                      value="Imran"
                       required
                     />
                   </div>
 
                   <!-- EMAIL -->
-
                   <div class="col-12">
                     <label for="email" class="form-label">
                       Email Address
                     </label>
 
-                    <div class="input-group">
-
-                      <input
-                        type="email"
-                        id="email"
-                        class="form-control"
-                        value="hafsa@example.com"
-                        readonly
-                      />
-                    </div>
-
-                    <small class="email-note">
-                      <i class="fa-solid fa-lock me-1"></i>
-                      Email address cannot be changed here.
-                    </small>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      readonly
+                    />
                   </div>
 
                   <!-- BUTTONS -->
 
                   <div class="col-12">
                     <div class="form-buttons">
-                      <a href="profile.html" class="btn cancel-btn"> Cancel </a>
+                      <a href="./profile.html" class="btn cancel-btn">
+                        Cancel
+                      </a>
 
-                      <button type="submit" class="btn save-btn">
+                      <button type="submit" id="saveBtn" class="btn save-btn">
                         <i class="fa-solid fa-check me-1"></i>
                         Save Changes
                       </button>
@@ -145,19 +133,19 @@
         </div>
       </div>
     </main>
-  <!-- sweetalert -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- supabase cdn -->
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- supabase cdn -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-  <!-- supabase -->
-  <script src="../js/supabase.js"></script>
+    <!-- supabase -->
+    <script src="../js/supabase.js"></script>
 
-  <!-- bootstrap -->
-  <script src="../js/bootstrap.js"></script>
+    <!-- bootstrap -->
+    <script src="../js/bootstrap.js"></script>
 
-  <!-- signup -->
-  <script src="../js/editProfile.js"></script>
+    <!-- signup -->
+    <script src="../js/editProfile.js"></script>
   </body>
 </html>
