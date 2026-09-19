@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>RecipeShare | Home</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+
+  <body>
+  <!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-4" href="home.html">
+      <i class="fa-solid fa-utensils me-2"></i>
+      Recipe<span>Share</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Menu -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="browse.html">
+            Browse Recipes
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="dashboard.html">
+            Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="myRecipes.html">
+            My Recipes
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- Profile -->
+
+      <div class="dropdown profile-dropdown">
+
+        <button
+          class="btn profile-btn d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+
+          <span id="profileInitial">H</span>
+
+          <span id="profileName">Hafsa</span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+
+          <li>
+            <a class="dropdown-item" href="profile.html">
+              <i class="fa-solid fa-user me-2"></i>
+              Profile
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="myRecipes.html">
+              <i class="fa-solid fa-utensils me-2"></i>
+              My Recipes
+            </a>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <button class="dropdown-item text-danger" id="logoutBtn">
+              <i class="fa-solid fa-right-from-bracket me-2"></i>
+              Logout
+            </button>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Hero Content -->
+
+          <div class="col-lg-6">
+            <span class="hero-badge">
+              <i class="fa-solid fa-heart me-1"></i>
+              Cook • Share • Enjoy
+            </span>
+
+            <h1 class="hero-title mt-3">
+              Good Food
+              <span>Brings People Together</span>
+            </h1>
+
+            <p class="hero-text">
+              Discover delicious recipes, share your favorite dishes and connect
+              with food lovers around the world.
+            </p>
+
+            <!-- Search -->
+
+            <div class="hero-search d-flex mt-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for a recipe..."
+              />
+
+              <button class="btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+
+            <div class="mt-4 d-flex flex-wrap gap-2">
+              <a
+                href="browse.html"
+                class="btn btn-warning text-white px-4 py-2"
+              >
+                Explore Recipes
+              </a>
+
+              <a href="addRecipe.html" class="btn btn-outline-dark px-4 py-2">
+                <i class="fa-solid fa-plus me-1"></i>
+                Share Recipe
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+
+          <div class="col-lg-6">
+            <div class="hero-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80"
+                class="img-fluid hero-image"
+                alt="Delicious food"
+              />
+
+              <div class="hero-floating-card">
+                <div class="floating-icon">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                  <small class="text-muted"> Community Favorite </small>
+
+                  <h6 class="mb-0 fw-bold">Fresh & Delicious</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features-section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+
+              <h5>Discover Recipes</h5>
+
+              <p>Explore hundreds of delicious recipes from our community.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+
+              <h5>Save Favorites</h5>
+
+              <p>Keep your favorite recipes organized in one place.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+
+              <h5>Share Recipes</h5>
+
+              <p>Create and share your favorite recipes with everyone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POPULAR RECIPES ================= -->
+
+    <section class="recipes-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-small-title"> Tasty & Delicious </span>
+
+            <h2>Popular Recipes</h2>
+          </div>
+
+          <a href="browse.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=700&q=80"
+                  alt="Pancakes"
+                />
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <span class="recipe-category"> Breakfast </span>
+
+                <h5>Classic Pancakes</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    25 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=700&q=80"
+                  alt="Pasta"
+                />
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <span class="recipe-category"> Dinner </span>
+
+                <h5>Chicken Alfredo Pasta</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    30 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
+                  alt="Salad"
+                />
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <span class="recipe-category"> Healthy </span>
+
+                <h5>Fresh Garden Salad</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    15 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"
+                  alt="Brownies"
+                />
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <span class="recipe-category"> Dessert </span>
+
+                <h5>Chocolate Brownies</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    40 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-small-title"> Explore </span>
+
+          <h2>Browse By Category</h2>
+
+          <p class="text-secondary">
+            Find the perfect recipe for every occasion.
+          </p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-6 col-md-3">
+            <a href="browse.html?category=breakfast" class="category-card">
+              <i class="fa-solid fa-mug-hot"></i>
+
+              <h6>Breakfast</h6>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <a href="browse.html?category=lunch" class="category-card">
+              <i class="fa-solid fa-bowl-food"></i>
+
+              <h6>Lunch</h6>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <a href="browse.html?category=dinner" class="category-card">
+              <i class="fa-solid fa-utensils"></i>
+
+              <h6>Dinner</h6>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <a href="browse.html?category=dessert" class="category-card">
+              <i class="fa-solid fa-cake-candles"></i>
+
+              <h6>Dessert</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="container py-5">
+      <div class="cta-section text-center">
+        <div class="cta-icon">
+          <i class="fa-solid fa-kitchen-set"></i>
+        </div>
+
+        <h2>Have a Recipe to Share?</h2>
+
+        <p>
+          Turn your favorite dish into a recipe and share it with our community.
+        </p>
+
+        <a
+          href="addRecipe.html"
+          class="btn btn-light text-warning fw-bold px-4"
+        >
+          <i class="fa-solid fa-plus me-2"></i>
+          Create Recipe
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h4>
+              <i class="fa-solid fa-utensils me-2"></i>
+              RecipeShare
+            </h4>
+
+            <p>
+              Discover, create and share delicious recipes with food lovers
+              everywhere.
+            </p>
+
+            <div class="social-icons">
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6>Quick Links</h6>
+
+            <a href="home.html">Home</a>
+            <a href="browse.html">Browse Recipes</a>
+            <a href="myRecipes.html">My Recipes</a>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6>Account</h6>
+
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+          </div>
+        </div>
+
+        <hr />
+
+        <p class="copyright">© 2026 RecipeShare. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- supabase cdn -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+    <!-- supabase -->
+    <script src="../js/supabase.js"></script>
+
+    <!-- bootstrap -->
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- signup -->
+    <script src="../js/home.js"></script>
+  </body>
+</html>

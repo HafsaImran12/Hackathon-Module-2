@@ -1,0 +1,356 @@
+/* =========================
+   BODY
+========================= */
+
+body {
+  background: #f8f9fa;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  min-height: 70px;
+}
+
+
+.logo {
+  color: #172033 !important;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo i {
+  color: #f59e0b;
+}
+
+.logo span {
+  color: #f59e0b;
+}
+
+
+.back-btn {
+  color: #555;
+  text-decoration: none;
+
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #f59e0b;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.edit-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 55px 0;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.page-heading h2 {
+  margin-bottom: 7px;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-heading p {
+  margin: 0;
+
+  color: #777;
+
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+  background: #fff;
+
+  padding: 35px;
+
+  border-radius: 16px;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar-section {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+
+.avatar {
+  width: 85px;
+  height: 85px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #f59e0b;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: 700;
+}
+
+
+.avatar-section h5 {
+  margin-bottom: 4px;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+.avatar-section p {
+  margin: 0;
+
+  color: #888;
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.form-label {
+  margin-bottom: 7px;
+
+  color: #172033;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group-text {
+  min-width: 44px;
+
+  justify-content: center;
+
+  background: #fff;
+
+  color: #888;
+
+  border: 1px solid #ddd;
+  border-right: none;
+}
+
+
+.form-control {
+  height: 46px;
+
+  border: 1px solid #ddd;
+  border-left: none;
+
+
+  box-shadow: none;
+}
+
+
+.form-control:focus {
+  border-color: #ffc107;
+
+  box-shadow: none;
+}
+
+
+.input-group:focus-within .input-group-text {
+  border-color: #ffc107;
+
+  color: #f59e0b;
+}
+
+
+/* =========================
+   EMAIL
+========================= */
+
+.form-control[readonly] {
+  background: #f5f6f7;
+
+  color: #777;
+
+  cursor: not-allowed;
+}
+
+
+.email-note {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #888;
+
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.form-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+
+.cancel-btn {
+  min-width: 110px;
+
+  padding: 11px 18px;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  color: #555;
+
+  
+  font-weight: 600;
+}
+
+
+.cancel-btn:hover {
+  background: #f5f5f5;
+
+  color: #333;
+}
+
+
+.save-btn {
+  min-width: 145px;
+
+  padding: 11px 18px;
+
+  background: #f59e0b;
+
+  border: none;
+
+  border-radius: 8px;
+
+  color: #fff;
+
+  font-weight: 600;
+}
+
+
+.save-btn:hover {
+  background: #e08b00;
+
+  color: #fff;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 767.98px) {
+
+  .edit-page {
+    padding: 40px 0;
+  }
+
+  .profile-card {
+    padding: 28px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 575.98px) {
+
+  .navbar {
+    min-height: 60px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+ 
+  .edit-page {
+    padding: 30px 0;
+  }
+
+  .page-heading h2 {
+    font-size: 23px;
+  }
+
+  .profile-card {
+    padding: 22px 18px;
+
+    border-radius: 12px;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+
+    font-size: 23px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons .btn {
+    width: 100%;
+  }
+
+}

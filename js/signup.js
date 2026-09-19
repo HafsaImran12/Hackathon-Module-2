@@ -4,6 +4,7 @@ const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+const inputs = document.querySelectorAll("input");
 
 signupBtn.addEventListener("click", async (event) => {
   event.preventDefault();
@@ -11,7 +12,6 @@ signupBtn.addEventListener("click", async (event) => {
   try {
     console.log("signup");
     
-    const inputs = document.querySelectorAll(".input");
     // show empty input error
 
     let emptyField = false;
@@ -76,4 +76,11 @@ signupBtn.addEventListener("click", async (event) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+
+inputs.forEach(input => {
+  input.addEventListener("input", () => {
+    input.classList.remove("emptyInput")
+  })
 });

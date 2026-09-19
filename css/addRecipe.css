@@ -1,0 +1,486 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  min-height: 72px;
+}
+
+.navbar-brand {
+  color: #f59e0b;
+}
+
+.navbar-brand span {
+  color: #172033;
+}
+
+.navbar-brand i {
+  color: #f59e0b;
+}
+
+.nav-link {
+  color: #444;
+  font-size: 14px;
+  margin: 0 8px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f59e0b;
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile-btn {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+}
+
+.profile-btn:hover {
+  background: #fff8e1;
+}
+
+#profileInitial {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+
+  border-radius: 50%;
+
+  background: #ffc107;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+.profile-dropdown .dropdown-menu {
+  min-width: 190px;
+  border: none;
+}
+
+
+/* ================= ADD RECIPE ================= */
+
+.add-recipe-section {
+  padding: 55px 0 70px;
+}
+
+
+/* Heading */
+
+.page-heading {
+  margin-bottom: 35px;
+}
+
+.small-title {
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.page-heading h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.page-heading p {
+  color: #777;
+  margin-bottom: 0;
+}
+
+
+/* ================= FORM CARD ================= */
+
+.recipe-form-card {
+  max-width: 1000px;
+  margin: auto;
+
+  background: white;
+
+  border: 1px solid #eee;
+  border-radius: 16px;
+
+  padding: 35px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Labels */
+
+.form-group label,
+.form-label {
+  display: block;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  color: #273044;
+}
+
+
+/* Inputs */
+
+.form-control,
+.form-select {
+  border: 1px solid #e2e5e9;
+  border-radius: 8px;
+
+  min-height: 45px;
+
+  font-size: 13px;
+
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ffc107;
+
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.12);
+}
+
+
+/* Textarea */
+
+textarea.form-control {
+  resize: vertical;
+}
+
+
+/* Input icon */
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+.input-icon input {
+  padding-left: 38px;
+}
+
+
+/* Input group */
+
+.input-group-text {
+  background: #f8f9fa;
+  border-color: #e2e5e9;
+  color: #777;
+  font-size: 13px;
+}
+
+
+/* ================= IMAGE UPLOAD ================= */
+
+.image-upload-card {
+  background: #fff;
+
+  border-radius: 12px;
+}
+
+
+.upload-area {
+  width: 100%;
+  min-height: 285px;
+
+  border: 2px dashed #e2e5e9;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  overflow: hidden;
+}
+
+.upload-area:hover {
+  border-color: #ffc107;
+  background: #fffdf5;
+}
+
+
+.upload-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #fff3cd;
+  color: #f59e0b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+}
+
+.upload-area h6 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.upload-area p {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.upload-area small {
+  color: #999;
+  font-size: 11px;
+}
+
+
+/* Preview */
+
+#imagePreview {
+  width: 100%;
+  height: 285px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+
+/* Choose button */
+
+.choose-image-btn {
+  border: 1px solid #ffc107;
+  color: #d99000;
+
+  background: #fffdf5;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 10px;
+}
+
+.choose-image-btn:hover {
+  background: #ffc107;
+  color: white;
+}
+
+
+/* ================= TIP ================= */
+
+.recipe-tip {
+  display: flex;
+  gap: 12px;
+
+  padding: 15px;
+
+  background: #fff8e1;
+
+  border-radius: 10px;
+}
+
+.tip-icon {
+  color: #f59e0b;
+  font-size: 18px;
+}
+
+.recipe-tip h6 {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.recipe-tip p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form-buttons .btn {
+  flex: 1;
+
+  min-height: 45px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-radius: 8px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #172033;
+
+  color: white;
+
+  padding: 35px 0;
+}
+
+.footer h5 {
+  color: #f59e0b;
+}
+
+.footer p {
+  color: #cbd5e1;
+
+  font-size: 13px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 991.98px) {
+
+  .profile-dropdown {
+    width: 100%;
+
+    margin-top: 8px;
+    padding-bottom: 10px;
+  }
+
+  .profile-btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .profile-btn i {
+    margin-left: auto;
+  }
+
+  .profile-dropdown .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+
+    width: 100%;
+
+    box-shadow: none !important;
+
+    border: 1px solid #eee;
+  }
+
+  .recipe-form-card {
+    max-width: 850px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767.98px) {
+
+  .add-recipe-section {
+    padding: 35px 0 50px;
+  }
+
+  .page-heading h1 {
+    font-size: 28px;
+  }
+
+  .page-heading p {
+    font-size: 13px;
+  }
+
+  .recipe-form-card {
+    padding: 22px 18px;
+    border-radius: 12px;
+  }
+
+  .upload-area {
+    min-height: 240px;
+  }
+
+  #imagePreview {
+    height: 240px;
+  }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 575.98px) {
+
+  .navbar-brand {
+    font-size: 18px !important;
+  }
+
+  .add-recipe-section {
+    padding-top: 30px;
+  }
+
+  .page-heading h1 {
+    font-size: 25px;
+  }
+
+  .recipe-form-card {
+    padding: 18px 14px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons .btn {
+    width: 100%;
+  }
+
+  .upload-area {
+    min-height: 220px;
+  }
+
+  #imagePreview {
+    height: 220px;
+  }
+
+}

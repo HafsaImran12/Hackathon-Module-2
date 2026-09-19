@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RecipeShare | Add Recipe</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/addRecipe.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-4" href="home.html">
+      <i class="fa-solid fa-utensils me-2"></i>
+      Recipe<span>Share</span>
+    </a>
+
+    <!-- Mobile button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="browse.html">
+            Browse
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="myRecipes.html">
+            My Recipes
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="addRecipe.html">
+            Add Recipe
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- Profile -->
+      <div class="dropdown profile-dropdown">
+
+        <button
+          class="btn profile-btn d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+
+          <span id="profileInitial">H</span>
+
+          <span id="profileName">Hafsa</span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+
+          <li>
+            <a class="dropdown-item" href="profile.html">
+              <i class="fa-solid fa-user me-2"></i>
+              Profile
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="myRecipes.html">
+              <i class="fa-solid fa-utensils me-2"></i>
+              My Recipes
+            </a>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <button class="dropdown-item text-danger" id="logoutBtn">
+              <i class="fa-solid fa-right-from-bracket me-2"></i>
+              Logout
+            </button>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- ================= ADD RECIPE ================= -->
+
+<section class="add-recipe-section">
+
+  <div class="container">
+
+    <!-- Heading -->
+
+    <div class="page-heading text-center">
+
+      <span class="small-title">
+        <i class="fa-solid fa-kitchen-set me-1"></i>
+        Share Your Recipe
+      </span>
+
+      <h1>Add New Recipe</h1>
+
+      <p>
+        Share your favorite recipe with the RecipeShare community.
+      </p>
+
+    </div>
+
+
+    <!-- Form Card -->
+
+    <div class="recipe-form-card">
+
+      <form id="recipeForm">
+
+        <div class="row g-4">
+
+          <!-- ================= LEFT ================= -->
+
+          <div class="col-lg-7">
+
+            <!-- Recipe Title -->
+
+            <div class="form-group mb-4">
+
+              <label for="recipeTitle">
+                Recipe Title
+              </label>
+
+              <div class="input-icon">
+
+                <i class="fa-solid fa-heading"></i>
+
+                <input
+                  type="text"
+                  id="recipeTitle"
+                  class="form-control"
+                  placeholder="e.g. Chicken Biryani"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Description -->
+
+            <div class="form-group mb-4">
+
+              <label for="recipeDescription">
+                Description
+              </label>
+
+              <textarea
+                id="recipeDescription"
+                class="form-control"
+                rows="4"
+                placeholder="Write a short description about your recipe..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- Category + Cooking Time -->
+
+            <div class="row g-3 mb-4">
+
+              <div class="col-md-6">
+
+                <label for="category">
+                  Category
+                </label>
+
+                <select
+                  id="category"
+                  class="form-select"
+                  required
+                >
+
+                  <option value="" selected disabled>
+                    Select category
+                  </option>
+
+                  <option value="Pakistani">
+                    Pakistani
+                  </option>
+
+                  <option value="Italian">
+                    Italian
+                  </option>
+
+                  <option value="Chinese">
+                    Chinese
+                  </option>
+
+                  <option value="Desserts">
+                    Desserts
+                  </option>
+
+                  <option value="Fast Food">
+                    Fast Food
+                  </option>
+
+                  <option value="Healthy">
+                    Healthy
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="col-md-6">
+
+                <label for="cookingTime">
+                  Cooking Time
+                </label>
+
+                <div class="input-group">
+
+                  <input
+                    type="number"
+                    id="cookingTime"
+                    class="form-control"
+                    placeholder="30"
+                    min="1"
+                    required
+                  >
+
+                  <span class="input-group-text">
+                    mins
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Ingredients -->
+
+            <div class="form-group mb-4">
+
+              <label for="ingredients">
+                Ingredients
+              </label>
+
+              <textarea
+                id="ingredients"
+                class="form-control"
+                rows="7"
+                placeholder="Write one ingredient per line...&#10;&#10;2 cups rice&#10;500g chicken&#10;1 onion&#10;2 tomatoes"
+                required
+              ></textarea>
+
+              <small class="text-muted">
+                Write each ingredient on a separate line.
+              </small>
+
+            </div>
+
+
+            <!-- Instructions -->
+
+            <div class="form-group">
+
+              <label for="instructions">
+                Instructions
+              </label>
+
+              <textarea
+                id="instructions"
+                class="form-control"
+                rows="8"
+                placeholder="Write step-by-step cooking instructions..."
+                required
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <!-- ================= RIGHT ================= -->
+
+          <div class="col-lg-5">
+
+            <!-- Image Upload -->
+
+            <div class="image-upload-card">
+
+              <label class="form-label">
+                Recipe Image
+              </label>
+
+              <div class="upload-area" id="uploadArea">
+
+                <input
+                  type="file"
+                  id="recipeImage"
+                  accept="image/png,image/jpeg,image/webp"
+                  hidden
+                >
+
+                <div id="uploadContent">
+
+                  <div class="upload-icon">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                  </div>
+
+                  <h6>
+                    Upload Recipe Image
+                  </h6>
+
+                  <p>
+                    Click to upload or drag & drop
+                  </p>
+
+                  <small>
+                    PNG, JPG or WEBP
+                  </small>
+
+                </div>
+
+
+                <!-- Preview -->
+
+                <img
+                  id="imagePreview"
+                  class="img-fluid d-none"
+                  alt="Recipe Preview"
+                >
+
+              </div>
+
+              <button
+                type="button"
+                class="btn choose-image-btn w-100 mt-3"
+                id="chooseImageBtn"
+              >
+                <i class="fa-solid fa-image me-2"></i>
+                Choose Image
+              </button>
+
+            </div>
+
+
+            <!-- Tips -->
+
+            <div class="recipe-tip mt-4">
+
+              <div class="tip-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+
+              <div>
+
+                <h6>Recipe Tips</h6>
+
+                <p>
+                  Use a clear and attractive image of your finished
+                  dish. This helps your recipe stand out.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="form-buttons mt-4">
+
+              <a
+                href="myRecipes.html"
+                class="btn btn-outline-secondary"
+              >
+                Cancel
+              </a>
+
+              <button
+                type="submit"
+                class="btn btn-warning text-white"
+              >
+                <i class="fa-solid fa-plus me-2"></i>
+                Add Recipe
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="container text-center">
+
+    <h5>
+      <i class="fa-solid fa-utensils me-2"></i>
+      RecipeShare
+    </h5>
+
+    <p>
+      Discover, create and share delicious recipes.
+    </p>
+
+    <p class="mb-0">
+      © 2026 RecipeShare. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="../js/bootstrap.js"></script>
+
+</body>
+</html>

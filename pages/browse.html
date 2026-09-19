@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RecipeShare | Browse Recipes</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/browse.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-4" href="home.html">
+      <i class="fa-solid fa-utensils me-2"></i>
+      Recipe<span>Share</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Menu -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="browse.html">
+            Browse Recipes
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="dashboard.html">
+            Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="myRecipes.html">
+            My Recipes
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- Profile -->
+
+      <div class="dropdown profile-dropdown">
+
+        <button
+          class="btn profile-btn d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+
+          <span id="profileInitial">H</span>
+
+          <span id="profileName">Hafsa</span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+
+          <li>
+            <a class="dropdown-item" href="profile.html">
+              <i class="fa-solid fa-user me-2"></i>
+              Profile
+            </a>
+          </li>
+
+          <li>
+            <a class="dropdown-item" href="myRecipes.html">
+              <i class="fa-solid fa-utensils me-2"></i>
+              My Recipes
+            </a>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li>
+            <button class="dropdown-item text-danger" id="logoutBtn">
+              <i class="fa-solid fa-right-from-bracket me-2"></i>
+              Logout
+            </button>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<section class="browse-section">
+
+  <div class="container">
+
+    <!-- Heading -->
+
+    <div class="browse-heading">
+
+      <div>
+        <span class="small-title">
+          Discover Delicious Food
+        </span>
+
+        <h1>All Recipes</h1>
+
+        <p>
+          Explore delicious recipes from our community.
+        </p>
+      </div>
+
+
+      <!-- Sort -->
+
+      <div class="sort-box">
+
+        <label for="sortRecipes">Sort by</label>
+
+        <select id="sortRecipes" class="form-select">
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+          <option value="az">A - Z</option>
+          <option value="za">Z - A</option>
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <div class="col-lg-3">
+
+        <div class="category-sidebar">
+
+          <h5>
+            <i class="fa-solid fa-filter me-2"></i>
+            Categories
+          </h5>
+
+
+          <button class="category-btn active">
+            <i class="fa-solid fa-border-all"></i>
+            All Recipes
+            <span>24</span>
+          </button>
+
+
+          <button class="category-btn">
+            <i class="fa-solid fa-mug-hot"></i>
+            Breakfast
+            <span>6</span>
+          </button>
+
+
+          <a href="#lunch" class="btn category-btn">
+            <i class="fa-solid fa-bowl-food"></i>
+            Lunch
+            <span>5</span>
+          </a>
+
+
+          <button class="category-btn">
+            <i class="fa-solid fa-utensils"></i>
+            Dinner
+            <span>7</span>
+          </button>
+
+
+          <button class="category-btn">
+            <i class="fa-solid fa-cake-candles"></i>
+            Dessert
+            <span>4</span>
+          </button>
+
+
+          <button class="category-btn">
+            <i class="fa-solid fa-cookie-bite"></i>
+            Snacks
+            <span>2</span>
+          </button>
+
+
+          <button class="category-btn">
+            <i class="fa-solid fa-leaf"></i>
+            Healthy
+            <span>5</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= RECIPES ================= -->
+
+      <div class="col-lg-9">
+
+        <div class="row g-4" id="recipeContainer">
+
+
+          <!-- Recipe 1 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="healthy"
+               data-title="Caprese Salad">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=700&q=80"
+                  alt="Caprese Salad"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Healthy
+                </span>
+
+                <h5>Caprese Salad</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    15 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Recipe 2 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="dinner"
+               data-title="Beef Tacos">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=700&q=80"
+                  alt="Beef Tacos"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Dinner
+                </span>
+
+                <h5>Beef Tacos</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    25 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Recipe 3 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="dinner"
+               data-title="Margherita Pizza">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"
+                  alt="Pizza"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Dinner
+                </span>
+
+                <h5>Margherita Pizza</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    30 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Recipe 4 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="breakfast"
+               data-title="Strawberry Smoothie">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=700&q=80"
+                  alt="Smoothie"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Breakfast
+                </span>
+
+                <h5>Strawberry Smoothie</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    10 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Recipe 5 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="dinner"
+               data-title="Grilled Salmon">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=80"
+                  alt="Grilled Salmon"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Dinner
+                </span>
+
+                <h5>Grilled Salmon</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    30 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Recipe 6 -->
+
+          <div class="col-sm-6 col-xl-4 recipe-item"
+               data-category="healthy"
+               data-title="Quinoa Bowl">
+
+            <div class="recipe-card">
+
+              <div class="recipe-image">
+
+                <img
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
+                  alt="Quinoa Bowl"
+                >
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+              </div>
+
+
+              <div class="recipe-body">
+
+                <span class="recipe-category">
+                  Healthy
+                </span>
+
+                <h5>Quinoa Bowl</h5>
+
+                <div class="recipe-info">
+
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    20 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="container text-center">
+
+    <h5>
+      <i class="fa-solid fa-utensils me-2"></i>
+      RecipeShare
+    </h5>
+
+    <p>
+      Discover, create and share delicious recipes.
+    </p>
+
+    <p class="mb-0">
+      © 2026 RecipeShare. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="../js/bootstrap.js"></script>
+
+<!-- Supabase -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<!-- Browse JS -->
+<script src="../js/browse.js"></script>
+
+</body>
+</html>

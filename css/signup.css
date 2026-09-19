@@ -49,39 +49,6 @@ body {
   }
   
   
-  /* Inputs */
-  
-  .input-group-custom {
-    min-height: 50px;
-  
-    display: flex;
-    align-items: center;
-  
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-  
-    padding: 0 14px;
-  
-    background-color: #fff;
-  }
-  
-  .input-group-custom > i {
-    color: #999;
-    margin-right: 10px;
-  }
-  
-  .input-group-custom .form-control {
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    min-height: 48px;
-  }
-  
-  .input-group-custom:focus-within {
-    border-color: #f5a623;
-  }
-  
-  
   /* Password Button */
   
   .password-toggle {

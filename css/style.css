@@ -103,7 +103,6 @@ img {
 
     color: #525c69 !important;
 
-    font-size: 12px;
 
     font-weight: 500;
 
@@ -145,7 +144,7 @@ img {
 
     color: #9299a2;
 
-    font-size: 11px;
+  
 
 }
 
@@ -160,7 +159,6 @@ img {
 
     outline: none;
 
-    font-size: 10px;
 
 }
 
@@ -169,7 +167,6 @@ img {
 
     color: var(--dark);
 
-    font-size: 11px;
 
     font-weight: 500;
 
@@ -195,7 +192,6 @@ img {
 
     padding: 9px 17px;
 
-    font-size: 11px;
 
     font-weight: 600;
 
@@ -237,7 +233,6 @@ img {
 
     color: var(--orange);
 
-    font-size: 11px;
 
     font-weight: 600;
 
@@ -272,7 +267,6 @@ img {
 
     color: var(--text);
 
-    font-size: 12px;
 
     line-height: 1.8;
 
@@ -320,7 +314,6 @@ img {
 
     outline: none;
 
-    font-size: 11px;
 
 }
 
@@ -375,7 +368,6 @@ img {
 
     border-radius: 50%;
 
-    font-size: 12px;
 
 }
 
@@ -415,18 +407,10 @@ img {
 }
 
 
-.feature-item strong {
-
-    font-size: 8px;
-
-}
-
-
 .feature-item small {
 
     color: #7d8691;
 
-    font-size: 7px;
 
 }
 
@@ -477,7 +461,6 @@ img {
 
     color: var(--orange);
 
-    font-size: 9px;
 
     font-weight: 600;
 
@@ -497,7 +480,6 @@ img {
 
     color: var(--orange);
 
-    font-size: 10px;
 
     font-weight: 600;
 
@@ -599,7 +581,6 @@ img {
 
 .recipe-title {
 
-    font-size: 13px;
 
     font-weight: 600;
 
@@ -618,7 +599,6 @@ img {
 
     color: #d88c00;
 
-    font-size: 8px;
 
 }
 
@@ -627,7 +607,7 @@ img {
 
     color: #7a8490;
 
-    font-size: 9px;
+
 
 }
 
@@ -681,7 +661,7 @@ img {
 
 .category-card span {
 
-    font-size: 10px;
+   
 
     font-weight: 600;
 
@@ -735,8 +715,6 @@ img {
     max-width: 580px;
 
     color: var(--text);
-
-    font-size: 12px;
 
     line-height: 1.8;
 
@@ -806,8 +784,6 @@ img {
 
     color: var(--text);
 
-    font-size: 10px;
-
 }
 
 
@@ -852,7 +828,7 @@ footer {
 
     color: #aeb6c0;
 
-    font-size: 10px;
+
 
     line-height: 1.8;
 
@@ -863,7 +839,6 @@ footer {
 
     margin-bottom: 15px;
 
-    font-size: 12px;
 
 }
 
@@ -876,7 +851,7 @@ footer {
 
     color: #aeb6c0;
 
-    font-size: 10px;
+
 
 }
 
@@ -939,7 +914,7 @@ footer {
 
     color: #8993a2;
 
-    font-size: 9px;
+
 
     text-align: center;
 
@@ -1003,12 +978,6 @@ footer {
     .hero-content h1 {
 
         font-size: 32px;
-
-    }
-
-    .hero-description {
-
-        font-size: 11px;
 
     }
 
