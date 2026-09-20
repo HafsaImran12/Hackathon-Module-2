@@ -67,6 +67,8 @@ async function getUser() {
         .toUpperCase();
     }
 
+    userName.innerHTML = fullName
+
 
     // Welcome name
 
