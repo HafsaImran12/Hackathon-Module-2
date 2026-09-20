@@ -227,7 +227,7 @@ recipeForm.addEventListener("submit", async (e) => {
       text: "Your recipe has been added successfully.",
       confirmButtonText: "My Recipes",
     }).then(() => {
-      window.location.href = "./pages/myRecipe.html";
+      window.location.href = "./myRecipe.html";
     });
 
     // Reset form
