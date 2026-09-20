@@ -125,7 +125,8 @@ recipeForm.addEventListener("submit", async (e) => {
     const imageFile = recipeImage.files[0];
 
     if (imageFile) {
-
+const uploadContent = document.querySelector("#uploadContent")
+uploadContent.innerHTML = ""
       const fileName =
         `${user.id}/${Date.now()}-${imageFile.name}`;
 
