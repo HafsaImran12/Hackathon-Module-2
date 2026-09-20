@@ -5,7 +5,6 @@ let userEmail = document.querySelector("#userEmail");
 let userName = document.querySelector("#userName");
 let userInitials = document.querySelector("#userInitials");
 let profileInitial = document.querySelector("#profileInitial");
-let logout = document.querySelector("#logoutBtn");
 
 async function getUser() {
   console.log("getuser");
@@ -37,14 +36,4 @@ async function getUser() {
   }
 }
 
-getUser();
-
-logout.addEventListener("click", async () => {
-  const { error } = await client.auth.signOut();
-  if (error) {
-    console.log(error.message);
-    return;
-  }
-
-  window.location.href = "../index.html";
-});
+getUser();``

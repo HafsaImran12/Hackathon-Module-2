@@ -1,245 +1,241 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>RecipeShare | Profile</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap.css" />
+  <title>RecipeShare | Profile</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/profile.css" />
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-  <body>
-    <!-- ================= NAVBAR ================= -->
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
 
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="home.html">
-          <i class="fa-solid fa-utensils me-2"></i>
-          Recipe<span>Share</span>
-        </a>
+<body>
+  <!-- ================= NAVBAR ================= -->
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="home.html">
+        <i class="fa-solid fa-utensils me-2"></i>
+        Recipe<span>Share</span>
+      </a>
 
-        <div class="collapse navbar-collapse" id="navbarMenu">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./home.html"> Home </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html"> Home </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./browse.html"> Browse </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./dashboard.html"> Dashboard </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./myRecipe.html"> My Recipes </a>
+          </li>
+        </ul>
+
+        <!-- Profile -->
+        <div class="dropdown profile-dropdown">
+          <button class="btn profile-btn d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown">
+            <span id="profileInitial">HI</span>
+
+            <span id="profileName">Hafsa Imran</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li>
+              <a class="dropdown-item" href="profile.html">
+                <i class="fa-solid fa-user me-2"></i>
+                Profile
+              </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="./browse.html"> Browse </a>
+            <li>
+              <a class="dropdown-item" href="./myRecipe.html">
+                <i class="fa-solid fa-utensils me-2"></i>
+                My Recipes
+              </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="./dashboard.html"> Dashboard </a>
+            <li>
+              <hr class="dropdown-divider">
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="./myRecipe.html"> My Recipes </a>
+            <li>
+              <button class="dropdown-item text-danger" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                Logout
+              </button>
             </li>
           </ul>
-
-          <!-- Profile -->
-          <div class="dropdown">
-            <button class="profile-btn" data-bs-toggle="dropdown">
-              <span id="profileInitial">H</span>
-
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" href="profile.html">
-                  <i class="fa-solid fa-user me-2"></i>
-                  Profile
-                </a>
-              </li>
-
-              <li>
-                <a class="dropdown-item" href="myRecipes.html">
-                  <i class="fa-solid fa-utensils me-2"></i>
-                  My Recipes
-                </a>
-              </li>
-
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <button class="dropdown-item text-danger">
-                  <i class="fa-solid fa-right-from-bracket me-2"></i>
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- ================= PROFILE ================= -->
+  <!-- ================= PROFILE ================= -->
 
-    <section class="profile-section">
-      <div class="container">
-        <div class="profile-card">
-          <!-- Profile Header -->
+  <section class="profile-section">
+    <div class="container">
+      <div class="profile-card">
+        <!-- Profile Header -->
 
-          <div class="profile-header">
-            <div class="profile-avatar">
-              <span id="userInitials"></span>
-            </div>
-
-            <div class="profile-info">
-              <h2 id="userName"></h2>
-
-              <p id="userEmail"></p>
-
-              <span class="member-badge">
-                <i class="fa-solid fa-circle-check me-1"></i>
-                RecipeShare Member
-              </span>
-            </div>
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <span id="userInitials"></span>
           </div>
 
-          <!-- Stats -->
+          <div class="profile-info">
+            <h2 id="userName"></h2>
 
-          <div class="row g-3 profile-stats">
-            <div class="col-6 col-md-4">
-              <div class="stat-box">
-                <i class="fa-solid fa-utensils"></i>
+            <p id="userEmail"></p>
 
-                <h4 id="recipeCount">12</h4>
-
-                <p>Recipes</p>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4">
-              <div class="stat-box">
-                <i class="fa-solid fa-heart"></i>
-
-                <h4>8</h4>
-
-                <p>Favorites</p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-              <div class="stat-box">
-                <i class="fa-solid fa-calendar"></i>
-
-                <h4>2026</h4>
-
-                <p>Joined</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Personal Information -->
-
-          <div class="profile-content">
-            <div class="section-title">
-              <h4>Personal Information</h4>
-            </div>
-
-            <div class="row g-4">
-              <!-- First Name -->
-
-              <div class="col-md-6">
-                <div class="info-box">
-                  <span> First Name </span>
-
-                  <strong id="firstName"> </strong>
-                </div>
-              </div>
-
-              <!-- Last Name -->
-
-              <div class="col-md-6">
-                <div class="info-box">
-                  <span> Last Name </span>
-
-                  <strong id="lastName"> </strong>
-                </div>
-              </div>
-
-              <!-- Email -->
-
-              <div class="col-md-6">
-                <div class="info-box">
-                  <span> Email Address </span>
-
-                  <strong id="email"> </strong>
-                </div>
-              </div>
-
-              <!-- Account -->
-
-              <div class="col-md-6">
-                <div class="info-box">
-                  <span> Account Status </span>
-
-                  <strong class="text-success">
-                    <i class="fa-solid fa-circle-check me-1"></i>
-                    Active
-                  </strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Actions -->
-
-          <div class="profile-actions">
-            <a href="myRecipes.html" class="btn btn-outline-warning">
-              <i class="fa-solid fa-book-open me-2"></i>
-              My Recipes
-            </a>
-
-            <a href="" class="btn btn-danger" id="logoutBtn">
-              <i class="fa-solid fa-right-from-bracket me-2"></i>
-              Logout
-            </a>
+            <span class="member-badge">
+              <i class="fa-solid fa-circle-check me-1"></i>
+              RecipeShare Member
+            </span>
           </div>
         </div>
+
+        <!-- Stats -->
+
+        <div class="row g-3 profile-stats">
+          <div class="col-6 col-md-4">
+            <div class="stat-box">
+              <i class="fa-solid fa-utensils"></i>
+
+              <h4 id="recipeCount">12</h4>
+
+              <p>Recipes</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="stat-box">
+              <i class="fa-solid fa-heart"></i>
+
+              <h4>8</h4>
+
+              <p>Favorites</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="stat-box">
+              <i class="fa-solid fa-calendar"></i>
+
+              <h4>2026</h4>
+
+              <p>Joined</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information -->
+
+        <div class="profile-content">
+          <div class="section-title">
+            <h4>Personal Information</h4>
+          </div>
+
+          <div class="row g-4">
+            <!-- First Name -->
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <span> First Name </span>
+
+                <strong id="firstName"> </strong>
+              </div>
+            </div>
+
+            <!-- Last Name -->
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <span> Last Name </span>
+
+                <strong id="lastName"> </strong>
+              </div>
+            </div>
+
+            <!-- Email -->
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <span> Email Address </span>
+
+                <strong id="email"> </strong>
+              </div>
+            </div>
+
+            <!-- Account -->
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <span> Account Status </span>
+
+                <strong class="text-success">
+                  <i class="fa-solid fa-circle-check me-1"></i>
+                  Active
+                </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+
+        <div class="profile-actions">
+          <a href="./myRecipe.html" class="btn btn-outline-warning">
+            <i class="fa-solid fa-book-open me-2"></i>
+            My Recipes
+          </a>
+
+          <a href="" class="btn btn-danger" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket me-2"></i>
+            Logout
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- sweetalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- sweetalert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- supabase cdn -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- supabase cdn -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-    <!-- supabase -->
-    <script src="../js/supabase.js"></script>
+  <!-- supabase -->
+  <script src="../js/supabase.js"></script>
 
-    <!-- bootstrap -->
-    <script src="../js/bootstrap.js"></script>
+  <!-- bootstrap -->
+  <script src="../js/bootstrap.js"></script>
 
-    <!-- profile -->
-    <script src="../js/profile.js"></script>
+  <!-- profile -->
+  <script src="../js/profile.js"></script>
 
-    <!-- logout -->
-    <script src="../js/logout.js"></script>
-  </body>
+  <!-- logout -->
+  <script src="../js/logout.js"></script>
+</body>
+
 </html>
