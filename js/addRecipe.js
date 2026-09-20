@@ -11,7 +11,6 @@ const recipeImage = document.querySelector("#recipeImage");
 const imagePreview = document.querySelector("#imagePreview");
 const chooseImageBtn = document.querySelector("#chooseImageBtn");
 
-
 let profileName = document.querySelector("#profileName");
 let profileInitial = document.querySelector("#profileInitial");
 
@@ -33,20 +32,19 @@ async function getUser() {
 
   let firstName = data[0].first_name;
   let lastName = data[0].last_name;
-  
+
   let name = `${firstName} ${lastName}`;
   profileName.innerHTML = name;
-  
+
   profileInitial.innerHTML = `${firstName[0]}${lastName[0]}`;
 
-    if (error) {
-        console.log(error.message);
-        return
-    }
+  if (error) {
+    console.log(error.message);
+    return;
+  }
 }
 
 getUser();
-
 
 // ================= IMAGE CHOOSE =================
 
@@ -54,11 +52,9 @@ chooseImageBtn.addEventListener("click", () => {
   recipeImage.click();
 });
 
-
 // ================= IMAGE PREVIEW =================
 
 recipeImage.addEventListener("change", () => {
-
   const file = recipeImage.files[0];
 
   if (!file) return;
@@ -69,32 +65,27 @@ recipeImage.addEventListener("change", () => {
   imagePreview.classList.remove("d-none");
 });
 
-
 // ================= ADD RECIPE =================
 
 recipeForm.addEventListener("submit", async (e) => {
-
   e.preventDefault();
 
   try {
-
     // Get logged-in user
     const {
       data: { user },
-      error: userError
+      error: userError,
     } = await client.auth.getUser();
 
     if (userError || !user) {
-
       Swal.fire({
         icon: "warning",
         title: "Login Required",
-        text: "Please login first."
+        text: "Please login first.",
       });
 
       return;
     }
-
 
     // ================= GET CATEGORY ID =================
 
@@ -104,19 +95,17 @@ recipeForm.addEventListener("submit", async (e) => {
       .eq("name", category.value)
       .single();
 
-
     if (categoryError) {
       console.log(categoryError);
 
       Swal.fire({
         icon: "error",
         title: "Category Error",
-        text: categoryError.message
+        text: categoryError.message,
       });
 
       return;
     }
-
 
     // ================= IMAGE UPLOAD =================
 
@@ -125,33 +114,29 @@ recipeForm.addEventListener("submit", async (e) => {
     const imageFile = recipeImage.files[0];
 
     if (imageFile) {
-const uploadContent = document.querySelector("#uploadContent")
-uploadContent.innerHTML = ""
-      const fileName =
-        `${user.id}/${Date.now()}-${imageFile.name}`;
+      const uploadContent = document.querySelector("#uploadContent");
+      uploadContent.innerHTML = "";
+      const fileName = `${user.id}/${Date.now()}-${imageFile.name}`;
 
       const { error: uploadError } = await client.storage
         .from("recipe-images")
         .upload(fileName, imageFile, {
           cacheControl: "3600",
           contentType: imageFile.type,
-          upsert: false
+          upsert: false,
         });
 
-
       if (uploadError) {
-
         console.log(uploadError);
 
         Swal.fire({
           icon: "error",
           title: "Image Upload Failed",
-          text: uploadError.message
+          text: uploadError.message,
         });
 
         return;
       }
-
 
       // Get public URL
 
@@ -161,7 +146,6 @@ uploadContent.innerHTML = ""
 
       imageUrl = publicUrlData.publicUrl;
     }
-
 
     // ================= INSERT RECIPE =================
 
@@ -175,26 +159,23 @@ uploadContent.innerHTML = ""
           description: recipeDescription.value.trim(),
           instructions: instructions.value.trim(),
           cooking_time: Number(cookingTime.value),
-          image_url: imageUrl
-        }
+          image_url: imageUrl,
+        },
       ])
       .select()
       .single();
 
-
     if (recipeError) {
-
       console.log(recipeError);
 
       Swal.fire({
         icon: "error",
         title: "Recipe Not Added",
-        text: recipeError.message
+        text: recipeError.message,
       });
 
       return;
     }
-
 
     // ================= INGREDIENTS =================
 
@@ -209,42 +190,34 @@ uploadContent.innerHTML = ""
 
     const ingredientLines = ingredients.value
       .split("\n")
-      .map(item => item.trim())
-      .filter(item => item !== "");
-
+      .map((item) => item.trim())
+      .filter((item) => item !== "");
 
     if (ingredientLines.length > 0) {
-
-      const ingredientData = ingredientLines.map(item => ({
-
+      const ingredientData = ingredientLines.map((item) => ({
         recipe_id: recipeData.id,
 
         ingredient_name: item,
 
-        quantity: null
-
+        quantity: null,
       }));
-
 
       const { error: ingredientError } = await client
         .from("ingredients")
         .insert(ingredientData);
 
-
       if (ingredientError) {
-
         console.log(ingredientError);
 
         Swal.fire({
           icon: "warning",
           title: "Recipe Added",
-          text: "Recipe added, but ingredients could not be saved."
+          text: "Recipe added, but ingredients could not be saved.",
         });
 
         return;
       }
     }
-
 
     // ================= SUCCESS =================
 
@@ -252,31 +225,23 @@ uploadContent.innerHTML = ""
       icon: "success",
       title: "Recipe Added!",
       text: "Your recipe has been added successfully.",
-      confirmButtonText: "My Recipes"
+      confirmButtonText: "My Recipes",
     }).then(() => {
-
       window.location.href = "./pages/myRecipe.html";
-
     });
-
 
     // Reset form
     recipeForm.reset();
 
     imagePreview.src = "";
     imagePreview.classList.add("d-none");
-
-
   } catch (error) {
-
     console.log(error);
 
     Swal.fire({
       icon: "error",
       title: "Something Went Wrong",
-      text: error.message
+      text: error.message,
     });
-
   }
-
 });

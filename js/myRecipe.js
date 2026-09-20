@@ -19,34 +19,30 @@ async function getUser() {
 
   let firstName = data[0].first_name;
   let lastName = data[0].last_name;
-  
+
   let name = `${firstName} ${lastName}`;
   profileName.innerHTML = name;
-  
+
   profileInitial.innerHTML = `${firstName[0]}${lastName[0]}`;
 
-    if (error) {
-        console.log(error.message);
-        return
-    }
+  if (error) {
+    console.log(error.message);
+    return;
+  }
 }
 
 getUser();
-
-
 
 const myRecipes = document.getElementById("myRecipes");
 
 // ================= GET MY RECIPES =================
 
 async function getMyRecipes() {
-
   try {
-
     // Logged-in user
     const {
       data: { user },
-      error: userError
+      error: userError,
     } = await client.auth.getUser();
 
     if (userError || !user) {
@@ -55,9 +51,10 @@ async function getMyRecipes() {
     }
 
     // Get recipes
-const { data, error } = await client
-  .from("recipes")
-  .select(`
+    const { data, error } = await client
+      .from("recipes")
+      .select(
+        `
     id,
     title,
     description,
@@ -68,9 +65,10 @@ const { data, error } = await client
     category (
       name
     )
-  `)
-  .eq("user_id", user.id)
-  .order("created_at", { ascending: false });
+  `,
+      )
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false });
 
     if (error) {
       console.log(error);
@@ -78,7 +76,7 @@ const { data, error } = await client
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: error.message
+        text: error.message,
       });
 
       return;
@@ -87,24 +85,17 @@ const { data, error } = await client
     console.log(data);
 
     displayRecipes(data);
-
   } catch (error) {
-
     console.log(error);
-
   }
-
 }
-
 
 // ================= DISPLAY RECIPES =================
 
 function displayRecipes(recipes) {
-
   myRecipes.innerHTML = "";
 
   if (!recipes || recipes.length === 0) {
-
     myRecipes.innerHTML = `
       <div class="col-12 text-center py-5">
 
@@ -127,12 +118,8 @@ function displayRecipes(recipes) {
     return;
   }
 
-
-  recipes.forEach(recipe => {
-
-    const date = new Date(recipe.created_at)
-      .toLocaleDateString();
-
+  recipes.forEach((recipe) => {
+    const date = new Date(recipe.created_at).toLocaleDateString();
 
     myRecipes.innerHTML += `
 
@@ -146,10 +133,7 @@ function displayRecipes(recipes) {
 
             ${
               recipe.image_url
-
-              ?
-
-              `
+                ? `
               <img
                 src="${recipe.image_url}"
                 alt="${recipe.title}"
@@ -157,10 +141,7 @@ function displayRecipes(recipes) {
                 style="object-fit:cover;"
               >
               `
-
-              :
-
-              `
+                : `
               <div
                 class="w-100 h-100 d-flex
                 align-items-center justify-content-center
@@ -204,10 +185,8 @@ function displayRecipes(recipes) {
 
               ${
                 recipe.description?.length > 100
-
-                ? recipe.description.substring(0, 100) + "..."
-
-                : recipe.description
+                  ? recipe.description.substring(0, 100) + "..."
+                  : recipe.description
               }
 
             </p>
@@ -282,11 +261,8 @@ function displayRecipes(recipes) {
       </div>
 
     `;
-
   });
-
 }
-
 
 // ================= RUN =================
 
@@ -295,14 +271,13 @@ getMyRecipes();
 // ================= DELETE RECIPE =================
 
 async function deleteRecipe(recipeId) {
-
   const result = await Swal.fire({
     title: "Delete Recipe?",
     text: "This recipe will be permanently deleted.",
     icon: "warning",
     showCancelButton: true,
     confirmButtonText: "Yes, Delete",
-    cancelButtonText: "Cancel"
+    cancelButtonText: "Cancel",
   });
 
   if (!result.isConfirmed) {
@@ -310,11 +285,10 @@ async function deleteRecipe(recipeId) {
   }
 
   try {
-
     // Get logged-in user
     const {
       data: { user },
-      error: userError
+      error: userError,
     } = await client.auth.getUser();
 
     if (userError || !user) {
@@ -335,7 +309,7 @@ async function deleteRecipe(recipeId) {
       Swal.fire({
         icon: "error",
         title: "Delete Failed",
-        text: error.message
+        text: error.message,
       });
 
       return;
@@ -347,21 +321,18 @@ async function deleteRecipe(recipeId) {
       title: "Deleted!",
       text: "Recipe deleted successfully.",
       timer: 1500,
-      showConfirmButton: false
+      showConfirmButton: false,
     });
 
     // Reload recipes
     getMyRecipes();
-
   } catch (error) {
-
     console.log(error);
 
     Swal.fire({
       icon: "error",
       title: "Something Went Wrong",
-      text: error.message
+      text: error.message,
     });
-
   }
 }

@@ -14,7 +14,6 @@ a {
   transition: 0.3s;
 }
 
-
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -75,16 +74,13 @@ a {
   white-space: nowrap;
 }
 
-
 /* Desktop */
 .profile-dropdown {
   position: relative;
 }
 
-
 /* Mobile */
 @media (max-width: 991.98px) {
-
   .profile-dropdown {
     width: 100%;
     margin-top: 15px;
@@ -184,7 +180,6 @@ a {
   color: white;
 }
 
-
 /* ================= HERO IMAGE ================= */
 
 .hero-image-wrapper {
@@ -223,7 +218,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 
 /* ================= FEATURES ================= */
 
@@ -268,7 +262,6 @@ a {
   line-height: 1.6;
 }
 
-
 /* ================= RECIPES ================= */
 
 .recipes-section {
@@ -305,7 +298,6 @@ a {
 .view-all:hover {
   color: #d97706;
 }
-
 
 /* ================= RECIPE CARD ================= */
 
@@ -391,7 +383,6 @@ a {
   margin-right: 4px;
 }
 
-
 /* ================= CATEGORIES ================= */
 
 .categories-section {
@@ -430,7 +421,6 @@ a {
   transform: translateY(-4px);
 }
 
-
 /* ================= CTA ================= */
 
 .cta-section {
@@ -459,7 +449,6 @@ a {
 .cta-section p {
   opacity: 0.9;
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -528,11 +517,9 @@ a {
   font-size: 13px;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 991px) {
-
   .navbar-nav {
     padding: 15px 0;
   }
@@ -552,12 +539,9 @@ a {
   .hero-floating-card {
     left: 15px;
   }
-
 }
 
-
 @media (max-width: 767px) {
-
   .hero-title {
     font-size: 42px;
   }
@@ -574,12 +558,9 @@ a {
   .section-heading {
     align-items: start;
   }
-
 }
 
-
 @media (max-width: 575px) {
-
   .hero-section {
     padding: 35px 0;
   }
@@ -615,5 +596,4 @@ a {
   .cta-section {
     padding: 45px 15px;
   }
-
 }

@@ -8,7 +8,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -36,7 +35,6 @@ body {
 .nav-link.active {
   color: #f59e0b;
 }
-
 
 /* ================= PROFILE ================= */
 
@@ -72,22 +70,16 @@ body {
   border: none;
 }
 
-
 /* ================= DASHBOARD ================= */
 
 .dashboard-section {
   padding: 45px 0 70px;
 }
 
-
 /* ================= WELCOME ================= */
 
 .welcome-card {
-  background: linear-gradient(
-    135deg,
-    #fff8e1,
-    #fff
-  );
+  background: linear-gradient(135deg, #fff8e1, #fff);
 
   border: 1px solid #f8e5a9;
   border-radius: 16px;
@@ -138,7 +130,6 @@ body {
   color: #fff;
 }
 
-
 /* ================= STATS ================= */
 
 .stat-card {
@@ -185,7 +176,6 @@ body {
 .stat-card p {
   color: #777;
 
-
   margin: 0 0 3px;
 }
 
@@ -196,7 +186,6 @@ body {
 
   font-weight: 700;
 }
-
 
 /* ================= SECTION HEADER ================= */
 
@@ -231,7 +220,6 @@ body {
   color: #f59e0b;
 }
 
-
 /* ================= RECIPE CARD ================= */
 
 .recipe-card {
@@ -250,10 +238,8 @@ body {
 .recipe-card:hover {
   transform: translateY(-4px);
 
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
-
 
 /* Recipe Image */
 
@@ -278,7 +264,6 @@ body {
   transform: scale(1.05);
 }
 
-
 /* Category */
 
 .category-badge {
@@ -296,7 +281,6 @@ body {
 
   font-weight: 600;
 }
-
 
 /* Favorite */
 
@@ -321,7 +305,6 @@ body {
   justify-content: center;
 }
 
-
 /* Recipe Body */
 
 .recipe-body {
@@ -340,7 +323,6 @@ body {
   display: flex;
   justify-content: space-between;
 
-
   color: #777;
 
   margin-bottom: 8px;
@@ -355,7 +337,6 @@ body {
 .recipe-body small {
   font-size: 10px;
 }
-
 
 /* ================= QUICK ACTIONS ================= */
 
@@ -413,21 +394,17 @@ body {
   margin: 0 0 4px;
 
   font-weight: 700;
-
 }
 
 .action-card p {
   margin: 0;
 
   color: #888;
-
 }
 
 .action-card > i {
   color: #aaa;
-
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -445,14 +422,11 @@ body {
 
 .footer p {
   color: #cbd5e1;
-
 }
-
 
 /* ================= TABLET ================= */
 
 @media (max-width: 991.98px) {
-
   .profile-dropdown {
     width: 100%;
 
@@ -483,14 +457,11 @@ body {
   .dashboard-section {
     padding-top: 35px;
   }
-
 }
-
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 767.98px) {
-
   .welcome-card {
     padding: 22px;
 
@@ -502,7 +473,6 @@ body {
   }
 
   .welcome-card p {
-
     margin-bottom: 18px;
   }
 
@@ -521,14 +491,11 @@ body {
   .recipe-image {
     height: 190px;
   }
-
 }
-
 
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 575.98px) {
-
   .dashboard-section {
     padding: 25px 0 45px;
   }
@@ -576,5 +543,4 @@ body {
   .recipe-image {
     height: 200px;
   }
-
 }

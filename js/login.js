@@ -27,17 +27,16 @@ loginBtn.addEventListener("click", async (event) => {
 
     console.log(data);
     if (error) {
-    console.log(error.message);
-     Swal.fire({
-          icon: "error",
-          title: "Login Failed",
+      console.log(error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
         text: error.message,
       });
       return;
     }
-    
-    window.location.href = "../pages/home.html"
-    
+
+    window.location.href = "../pages/home.html";
   } catch (error) {
     console.log(error);
   }

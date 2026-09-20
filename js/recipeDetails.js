@@ -1,9 +1,6 @@
 const recipeDetails = document.getElementById("recipeDetails");
-
 // ================= GET RECIPE ID =================
-
 const urlParams = new URLSearchParams(window.location.search);
-
 const recipeId = urlParams.get("id");
 
 // ================= LOAD PROFILE =================
@@ -124,234 +121,152 @@ function displayRecipe(recipe, ingredients) {
         return `
 
           <div class="ingredient-item">
-
             <i class="fa-solid fa-check me-2"></i>
-
             <span>
-
               ${item.quantity ? `${item.quantity} ` : ""}
-
               ${item.ingredient_name}
-
             </span>
-
           </div>
-
         `;
       })
       .join("");
   } else {
     ingredientsHTML = `
-
       <p class="text-muted">
         No ingredients added.
       </p>
-
     `;
   }
 
   // Image
   let imageHTML = "";
-
   if (recipe.image_url) {
     imageHTML = `
-
       <img
         src="${recipe.image_url}"
         alt="${recipe.title}"
         class="recipe-image"
       >
-
     `;
   } else {
     imageHTML = `
-
       <div class="image-placeholder">
-
         <i class="fa-solid fa-utensils fa-5x"></i>
-
       </div>
-
     `;
   }
 
   // Main HTML
   recipeDetails.innerHTML = `
-
     <!-- Back -->
-
     <a
       href="./browse.html"
       class="back-link"
     >
-
       <i class="fa-solid fa-arrow-left me-2"></i>
-
       Back to Recipes
-
     </a>
 
-
-    <!-- Recipe Card -->
+  <!-- Recipe Card -->
 
     <div class="recipe-card">
-
 
       <!-- Top -->
 
       <div class="row g-4">
 
-
         <!-- Image -->
 
         <div class="col-lg-6">
-
           ${imageHTML}
-
         </div>
-
 
         <!-- Info -->
 
         <div class="col-lg-6 d-flex flex-column justify-content-center">
 
-
           <!-- Category -->
 
           <span class="category-badge align-self-start">
-
             ${recipe.category?.name || "Uncategorized"}
-
           </span>
-
 
           <!-- Title -->
 
           <h1 class="recipe-title">
-
-            ${recipe.title}
-
+          ${recipe.title}
           </h1>
-
 
           <!-- Description -->
 
           <p class="recipe-description">
-
             ${recipe.description || "No description available."}
-
           </p>
 
 
           <!-- Cooking Time -->
 
           <div class="recipe-info">
-
             <div class="info-icon">
-
               <i class="fa-regular fa-clock"></i>
-
             </div>
-
-
             <div class="info-text">
-
               <small>
                 Cooking Time
               </small>
-
               <strong>
                 ${recipe.cooking_time || 0}
                 minutes
               </strong>
-
             </div>
-
           </div>
-
 
           <!-- Date -->
 
           <div class="recipe-info">
-
             <div class="info-icon">
-
-              <i class="fa-regular fa-calendar"></i>
-
+            <i class="fa-regular fa-calendar"></i>
             </div>
-
-
             <div class="info-text">
-
               <small>
                 Added On
               </small>
-
               <strong>
                 ${date}
               </strong>
-
             </div>
-
           </div>
-
-
         </div>
-
       </div>
 
-
       <hr class="my-5">
-
 
       <!-- Ingredients -->
 
       <div class="mb-5">
-
         <h2 class="section-title">
-
           <i class="fa-solid fa-basket-shopping me-2"></i>
-
           Ingredients
-
         </h2>
-
-
         <div class="row">
-
           <div class="col-lg-8">
-
             ${ingredientsHTML}
-
           </div>
-
         </div>
-
       </div>
 
 
       <!-- Instructions -->
 
       <div>
-
         <h2 class="section-title">
-
           <i class="fa-solid fa-list-check me-2"></i>
-
           Instructions
-
         </h2>
-
-
         <div class="instructions-box">
-
           ${recipe.instructions || "No instructions available."}
-
         </div>
-
       </div>
-
-
     </div>
 
   `;
@@ -363,42 +278,28 @@ function showError(message) {
   recipeDetails.innerHTML = `
 
     <div class="text-center py-5">
-
       <i
         class="fa-solid fa-circle-exclamation text-danger"
         style="font-size:60px;"
       ></i>
-
-
       <h3 class="mt-4">
         Recipe Not Found
       </h3>
-
-
       <p class="text-muted">
         ${message}
       </p>
-
-
       <a
         href="./browse.html"
         class="btn btn-warning mt-2"
       >
-
         <i class="fa-solid fa-arrow-left me-2"></i>
-
         Back to Recipes
-
       </a>
-
     </div>
-
   `;
 }
-
 
 // ================= START =================
 
 loadProfile();
-
 getRecipeDetails();

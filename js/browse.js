@@ -19,16 +19,16 @@ async function getUser() {
 
   let firstName = data[0].first_name;
   let lastName = data[0].last_name;
-  
+
   let name = `${firstName} ${lastName}`;
   profileName.innerHTML = name;
-  
+
   profileInitial.innerHTML = `${firstName[0]}${lastName[0]}`;
 
-    if (error) {
-        console.log(error.message);
-        return
-    }
+  if (error) {
+    console.log(error.message);
+    return;
+  }
 }
 
 getUser();

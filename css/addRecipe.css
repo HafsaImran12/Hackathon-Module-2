@@ -8,7 +8,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -36,7 +35,6 @@ body {
 .nav-link.active {
   color: #f59e0b;
 }
-
 
 /* ================= PROFILE ================= */
 
@@ -72,13 +70,11 @@ body {
   border: none;
 }
 
-
 /* ================= ADD RECIPE ================= */
 
 .add-recipe-section {
   padding: 55px 0 70px;
 }
-
 
 /* Heading */
 
@@ -102,7 +98,6 @@ body {
   margin-bottom: 0;
 }
 
-
 /* ================= FORM CARD ================= */
 
 .recipe-form-card {
@@ -119,7 +114,6 @@ body {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
 }
 
-
 /* Labels */
 
 .form-group label,
@@ -133,7 +127,6 @@ body {
   color: #273044;
 }
 
-
 /* Inputs */
 
 .form-control,
@@ -142,7 +135,6 @@ body {
   border-radius: 8px;
 
   min-height: 45px;
-
 
   box-shadow: none;
 }
@@ -154,13 +146,11 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.12);
 }
 
-
 /* Textarea */
 
 textarea.form-control {
   resize: vertical;
 }
-
 
 /* Input icon */
 
@@ -177,13 +167,11 @@ textarea.form-control {
   transform: translateY(-50%);
 
   color: #9ca3af;
-
 }
 
 .input-icon input {
   padding-left: 38px;
 }
-
 
 /* Input group */
 
@@ -193,7 +181,6 @@ textarea.form-control {
   color: #777;
 }
 
-
 /* ================= IMAGE UPLOAD ================= */
 
 .image-upload-card {
@@ -201,7 +188,6 @@ textarea.form-control {
 
   border-radius: 12px;
 }
-
 
 .upload-area {
   width: 100%;
@@ -229,7 +215,6 @@ textarea.form-control {
   border-color: #ffc107;
   background: #fffdf5;
 }
-
 
 .upload-icon {
   width: 60px;
@@ -263,7 +248,6 @@ textarea.form-control {
   color: #999;
 }
 
-
 /* Preview */
 
 #imagePreview {
@@ -274,7 +258,6 @@ textarea.form-control {
 
   border-radius: 10px;
 }
-
 
 /* Choose button */
 
@@ -293,7 +276,6 @@ textarea.form-control {
   background: #ffc107;
   color: white;
 }
-
 
 /* ================= TIP ================= */
 
@@ -326,7 +308,6 @@ textarea.form-control {
   line-height: 1.6;
 }
 
-
 /* ================= BUTTONS ================= */
 
 .form-buttons {
@@ -337,12 +318,10 @@ textarea.form-control {
 .form-buttons .btn {
   flex: 1;
 
-
   font-weight: 600;
 
   border-radius: 8px;
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -360,14 +339,11 @@ textarea.form-control {
 
 .footer p {
   color: #cbd5e1;
-
 }
-
 
 /* ================= TABLET ================= */
 
 @media (max-width: 991.98px) {
-
   .profile-dropdown {
     width: 100%;
 
@@ -398,14 +374,11 @@ textarea.form-control {
   .recipe-form-card {
     max-width: 850px;
   }
-
 }
-
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 767.98px) {
-
   .add-recipe-section {
     padding: 35px 0 50px;
   }
@@ -426,14 +399,11 @@ textarea.form-control {
   #imagePreview {
     height: 240px;
   }
-
 }
-
 
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 575.98px) {
-
   .navbar-brand {
     font-size: 18px !important;
   }
@@ -465,5 +435,4 @@ textarea.form-control {
   #imagePreview {
     height: 220px;
   }
-
 }

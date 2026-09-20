@@ -19,116 +19,91 @@
   </head>
 
   <body>
-  <!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-4" href="home.html">
+          <i class="fa-solid fa-utensils me-2"></i>
+          Recipe<span>Share</span>
+        </a>
 
-  <div class="container">
-
-    <!-- Logo -->
-    <a class="navbar-brand fw-bold fs-4" href="home.html">
-      <i class="fa-solid fa-utensils me-2"></i>
-      Recipe<span>Share</span>
-    </a>
-
-    <!-- Mobile Toggle -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar Menu -->
-    <div class="collapse navbar-collapse" id="navbarMenu">
-
-      <ul class="navbar-nav mx-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="./home.html">
-            Home
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="./browse.html">
-            Browse Recipes
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" href="./dashboard.html">
-            Dashboard
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="./myRecipe.html">
-            My Recipes
-          </a>
-        </li>
-
-      </ul>
-
-
-      <!-- Profile -->
-
-      <div class="dropdown profile-dropdown">
-
+        <!-- Mobile Toggle -->
         <button
-          class="btn profile-btn d-flex align-items-center gap-2"
+          class="navbar-toggler"
           type="button"
-          data-bs-toggle="dropdown"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
         >
-
-          <span id="profileInitial">H</span>
-
-          <span id="profileName">Hafsa</span>
-
-          <i class="fa-solid fa-chevron-down"></i>
-
+          <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./home.html"> Home </a>
+            </li>
 
-        <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li class="nav-item">
+              <a class="nav-link" href="./browse.html"> Browse Recipes </a>
+            </li>
 
-          <li>
-            <a class="dropdown-item" href="profile.html">
-              <i class="fa-solid fa-user me-2"></i>
-              Profile
-            </a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./dashboard.html"> Dashboard </a>
+            </li>
 
-          <li>
-            <a class="dropdown-item" href="myRecipes.html">
-              <i class="fa-solid fa-utensils me-2"></i>
-              My Recipes
-            </a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./myRecipe.html"> My Recipes </a>
+            </li>
+          </ul>
 
-          <li>
-            <hr class="dropdown-divider">
-          </li>
+          <!-- Profile -->
 
-          <li>
-            <button class="dropdown-item text-danger" id="logoutBtn">
-              <i class="fa-solid fa-right-from-bracket me-2"></i>
-              Logout
+          <div class="dropdown profile-dropdown">
+            <button
+              class="btn profile-btn d-flex align-items-center gap-2"
+              type="button"
+              data-bs-toggle="dropdown"
+            >
+              <span id="profileInitial">H</span>
+
+              <span id="profileName">Hafsa</span>
+
+              <i class="fa-solid fa-chevron-down"></i>
             </button>
-          </li>
 
-        </ul>
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+              <li>
+                <a class="dropdown-item" href="profile.html">
+                  <i class="fa-solid fa-user me-2"></i>
+                  Profile
+                </a>
+              </li>
 
+              <li>
+                <a class="dropdown-item" href="myRecipes.html">
+                  <i class="fa-solid fa-utensils me-2"></i>
+                  My Recipes
+                </a>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <button class="dropdown-item text-danger" id="logoutBtn">
+                  <i class="fa-solid fa-right-from-bracket me-2"></i>
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-    </div>
-
-  </div>
-
-</nav>
-
+    </nav>
 
     <!-- ================= HERO ================= -->
 
@@ -552,7 +527,6 @@
     <!-- bootstrap -->
     <script src="../js/bootstrap.js"></script>
 
-    
     <!-- signup -->
     <script src="../js/home.js"></script>
 

@@ -4,7 +4,6 @@ body {
   background-color: #fffdf8;
 }
 
-
 /* ================= NAVBAR ================= */
 
 .navbar-brand span {
@@ -37,16 +36,11 @@ body {
   font-weight: 600;
 }
 
-
 /* ================= PAGE HEADER ================= */
 
 .page-header {
   padding: 70px 0 50px;
-  background: linear-gradient(
-    135deg,
-    #fff8e1,
-    #fffdf8
-  );
+  background: linear-gradient(135deg, #fff8e1, #fffdf8);
 }
 
 .small-title {
@@ -59,13 +53,11 @@ body {
   font-size: 42px;
 }
 
-
 /* ================= RECIPES SECTION ================= */
 
 .recipes-section {
   padding: 20px 0 80px;
 }
-
 
 /* ================= RECIPE CARDS ================= */
 
@@ -82,7 +74,6 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-
 /* Image */
 
 .recipe-img {
@@ -90,7 +81,6 @@ body {
   height: 220px;
   object-fit: cover;
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -108,11 +98,9 @@ body {
   color: #ced4da;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 991px) {
-
   .navbar-nav {
     margin-top: 15px;
   }
@@ -129,12 +117,9 @@ body {
   .page-header h1 {
     font-size: 36px;
   }
-
 }
 
-
 @media (max-width: 576px) {
-
   .page-header {
     padding: 45px 15px 35px;
   }
@@ -150,5 +135,4 @@ body {
   .footer {
     padding: 30px 15px;
   }
-
 }

@@ -8,14 +8,14 @@ const inputs = document.querySelectorAll("input");
 
 signupBtn.addEventListener("click", async (event) => {
   event.preventDefault();
-  
+
   try {
     console.log("signup");
-    
+
     // show empty input error
 
     let emptyField = false;
-    
+
     inputs.forEach((input) => {
       if (input.value.trim() === "") {
         input.classList.add("emptyInput");
@@ -23,7 +23,7 @@ signupBtn.addEventListener("click", async (event) => {
       }
     });
 
-    if(emptyField) return
+    if (emptyField) return;
 
     // signup user
     const { data, error: signupError } = await client.auth.signUp({
@@ -78,9 +78,8 @@ signupBtn.addEventListener("click", async (event) => {
   }
 });
 
-
-inputs.forEach(input => {
+inputs.forEach((input) => {
   input.addEventListener("input", () => {
-    input.classList.remove("emptyInput")
-  })
+    input.classList.remove("emptyInput");
+  });
 });
