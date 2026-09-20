@@ -1,0 +1,154 @@
+/* ================= GENERAL ================= */
+
+body {
+  background-color: #fffdf8;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar-brand span {
+  color: #f5b400;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin: 0 8px;
+}
+
+.navbar-nav .nav-link.active {
+  color: #f5b400;
+}
+
+.profile-btn {
+  border: none;
+  background: transparent;
+}
+
+.profile-btn span:first-child {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffc107;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+
+/* ================= PAGE HEADER ================= */
+
+.page-header {
+  padding: 70px 0 50px;
+  background: linear-gradient(
+    135deg,
+    #fff8e1,
+    #fffdf8
+  );
+}
+
+.small-title {
+  color: #e6a800;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  font-size: 42px;
+}
+
+
+/* ================= RECIPES SECTION ================= */
+
+.recipes-section {
+  padding: 20px 0 80px;
+}
+
+
+/* ================= RECIPE CARDS ================= */
+
+.recipe-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Image */
+
+.recipe-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  color: #ffc107;
+}
+
+.footer p {
+  color: #ced4da;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+  .navbar-nav {
+    margin-top: 15px;
+  }
+
+  .profile-dropdown {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .page-header {
+    padding: 55px 0 40px;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+
+  .page-header {
+    padding: 45px 15px 35px;
+  }
+
+  .page-header h1 {
+    font-size: 30px;
+  }
+
+  .recipes-section {
+    padding: 15px 0 60px;
+  }
+
+  .footer {
+    padding: 30px 15px;
+  }
+
+}

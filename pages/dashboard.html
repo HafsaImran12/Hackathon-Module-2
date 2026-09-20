@@ -1,657 +1,457 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>RecipeShare | Dashboard</title>
+    <title>RecipeShare | Dashboard</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  >
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../css/dashboard.css">
-</head>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- ================= NAVBAR ================= -->
 
-<!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-4" href="home.html">
+          <i class="fa-solid fa-utensils me-2"></i>
+          Recipe<span>Share</span>
+        </a>
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-
-  <div class="container">
-
-    <!-- Logo -->
-    <a class="navbar-brand fw-bold fs-4" href="home.html">
-      <i class="fa-solid fa-utensils me-2"></i>
-      Recipe<span>Share</span>
-    </a>
-
-    <!-- Mobile Toggle -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar Menu -->
-    <div class="collapse navbar-collapse" id="navbarMenu">
-
-      <ul class="navbar-nav mx-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">
-            Home
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="browse.html">
-            Browse Recipes
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" href="dashboard.html">
-            Dashboard
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="myRecipes.html">
-            My Recipes
-          </a>
-        </li>
-
-      </ul>
-
-
-      <!-- Profile -->
-
-      <div class="dropdown profile-dropdown">
-
+        <!-- Mobile Toggle -->
         <button
-          class="btn profile-btn d-flex align-items-center gap-2"
+          class="navbar-toggler"
           type="button"
-          data-bs-toggle="dropdown"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
         >
-
-          <span id="profileInitial">H</span>
-
-          <span id="profileName">Hafsa</span>
-
-          <i class="fa-solid fa-chevron-down"></i>
-
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-
-        <ul class="dropdown-menu dropdown-menu-end shadow">
-
-          <li>
-            <a class="dropdown-item" href="profile.html">
-              <i class="fa-solid fa-user me-2"></i>
-              Profile
-            </a>
-          </li>
-
-          <li>
-            <a class="dropdown-item" href="myRecipes.html">
-              <i class="fa-solid fa-utensils me-2"></i>
-              My Recipes
-            </a>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <button class="dropdown-item text-danger" id="logoutBtn">
-              <i class="fa-solid fa-right-from-bracket me-2"></i>
-              Logout
-            </button>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</nav>
-
-
-<!-- ================= DASHBOARD ================= -->
-
-<main class="dashboard-section">
-
-  <div class="container">
-
-
-    <!-- ================= WELCOME ================= -->
-
-    <div class="welcome-card">
-
-      <div>
-
-        <span class="welcome-small">
-          Welcome back! 👋
-        </span>
-
-        <h1>
-          Hello, <span id="userName">Hafsa</span>!
-        </h1>
-
-        <p>
-          Manage your recipes and discover delicious food
-          from our community.
-        </p>
-
-      </div>
-
-
-      <a
-        href="addRecipe.html"
-        class="btn add-recipe-btn"
-      >
-        <i class="fa-solid fa-plus me-2"></i>
-        Add Recipe
-      </a>
-
-    </div>
-
-
-    <!-- ================= STATS ================= -->
-
-    <div class="row g-4 mb-4">
-
-      <!-- Total Recipes -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            <i class="fa-solid fa-utensils"></i>
-          </div>
-
-          <div>
-
-            <p>Total Recipes</p>
-
-            <h3 id="totalRecipes">
-              12
-            </h3>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- My Recipes -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
-
-          <div>
-
-            <p>My Recipes</p>
-
-            <h3 id="myRecipesCount">
-              6
-            </h3>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- Categories -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-
-          <div>
-
-            <p>Categories</p>
-
-            <h3>
-              6
-            </h3>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- Favorites -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            <i class="fa-solid fa-heart"></i>
-          </div>
-
-          <div>
-
-            <p>Favorites</p>
-
-            <h3>
-              8
-            </h3>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ================= RECENT RECIPES ================= -->
-
-    <div class="section-header">
-
-      <div>
-
-        <span class="section-small">
-          Your latest recipes
-        </span>
-
-        <h2>
-          Recent Recipes
-        </h2>
-
-      </div>
-
-      <a href="myRecipes.html" class="view-all">
-        View All
-        <i class="fa-solid fa-arrow-right ms-1"></i>
-      </a>
-
-    </div>
-
-
-    <div class="row g-4">
-
-
-      <!-- Recipe 1 -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="recipe-card">
-
-          <div class="recipe-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80"
-              alt="Pasta"
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html"> Home </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="browse.html"> Browse Recipes </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="dashboard.html"> Dashboard </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="myRecipes.html"> My Recipes </a>
+            </li>
+          </ul>
+
+          <!-- Profile -->
+
+          <div class="dropdown profile-dropdown">
+            <button
+              class="btn profile-btn d-flex align-items-center gap-2"
+              type="button"
+              data-bs-toggle="dropdown"
             >
+              <span id="profileInitial">H</span>
 
-            <span class="category-badge">
-              Italian
-            </span>
+              <span id="profileName">Hafsa</span>
 
-            <button class="favorite-btn">
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-chevron-down"></i>
             </button>
 
+            <ul class="dropdown-menu dropdown-menu-end shadow">
+              <li>
+                <a class="dropdown-item" href="profile.html">
+                  <i class="fa-solid fa-user me-2"></i>
+                  Profile
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="myRecipes.html">
+                  <i class="fa-solid fa-utensils me-2"></i>
+                  My Recipes
+                </a>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <button class="dropdown-item text-danger" id="logoutBtn">
+                  <i class="fa-solid fa-right-from-bracket me-2"></i>
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
-
-
-          <div class="recipe-body">
-
-            <h5>
-              Creamy Pasta
-            </h5>
-
-            <div class="recipe-info">
-
-              <span>
-                <i class="fa-regular fa-clock"></i>
-                30 mins
-              </span>
-
-              <span>
-                <i class="fa-solid fa-signal"></i>
-                Easy
-              </span>
-
-            </div>
-
-            <small class="text-muted">
-              Added recently
-            </small>
-
-          </div>
-
         </div>
-
       </div>
+    </nav>
 
+    <!-- ================= DASHBOARD ================= -->
 
-      <!-- Recipe 2 -->
+    <main class="dashboard-section">
+      <div class="container">
+        <!-- ================= WELCOME ================= -->
 
-      <div class="col-sm-6 col-lg-3">
+        <div class="welcome-card">
+          <div>
+            <span class="welcome-small"> Welcome back! 👋 </span>
 
-        <div class="recipe-card">
+            <h1>Hello, <span id="userName">Hafsa</span>!</h1>
 
-          <div class="recipe-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
-              alt="Biryani"
-            >
-
-            <span class="category-badge">
-              Pakistani
-            </span>
-
-            <button class="favorite-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
+            <p>
+              Manage your recipes and discover delicious food from our
+              community.
+            </p>
           </div>
 
-
-          <div class="recipe-body">
-
-            <h5>
-              Chicken Biryani
-            </h5>
-
-            <div class="recipe-info">
-
-              <span>
-                <i class="fa-regular fa-clock"></i>
-                50 mins
-              </span>
-
-              <span>
-                <i class="fa-solid fa-signal"></i>
-                Medium
-              </span>
-
-            </div>
-
-            <small class="text-muted">
-              Added recently
-            </small>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- Recipe 3 -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="recipe-card">
-
-          <div class="recipe-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
-              alt="Chocolate Cake"
-            >
-
-            <span class="category-badge">
-              Desserts
-            </span>
-
-            <button class="favorite-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-          </div>
-
-
-          <div class="recipe-body">
-
-            <h5>
-              Chocolate Cake
-            </h5>
-
-            <div class="recipe-info">
-
-              <span>
-                <i class="fa-regular fa-clock"></i>
-                45 mins
-              </span>
-
-              <span>
-                <i class="fa-solid fa-signal"></i>
-                Medium
-              </span>
-
-            </div>
-
-            <small class="text-muted">
-              Added recently
-            </small>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- Recipe 4 -->
-
-      <div class="col-sm-6 col-lg-3">
-
-        <div class="recipe-card">
-
-          <div class="recipe-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
-              alt="Healthy Salad"
-            >
-
-            <span class="category-badge">
-              Healthy
-            </span>
-
-            <button class="favorite-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-          </div>
-
-
-          <div class="recipe-body">
-
-            <h5>
-              Fresh Garden Salad
-            </h5>
-
-            <div class="recipe-info">
-
-              <span>
-                <i class="fa-regular fa-clock"></i>
-                15 mins
-              </span>
-
-              <span>
-                <i class="fa-solid fa-signal"></i>
-                Easy
-              </span>
-
-            </div>
-
-            <small class="text-muted">
-              Added recently
-            </small>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ================= QUICK ACTIONS ================= -->
-
-    <div class="quick-section">
-
-      <div class="section-header">
-
-        <div>
-
-          <span class="section-small">
-            Quick access
-          </span>
-
-          <h2>
-            Quick Actions
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="row g-3">
-
-        <div class="col-md-4">
-
-          <a href="addRecipe.html" class="action-card">
-
-            <div class="action-icon">
-              <i class="fa-solid fa-plus"></i>
-            </div>
-
-            <div>
-              <h6>Add New Recipe</h6>
-              <p>Share a delicious recipe.</p>
-            </div>
-
-            <i class="fa-solid fa-arrow-right ms-auto"></i>
-
+          <a href="addRecipe.html" class="btn add-recipe-btn">
+            <i class="fa-solid fa-plus me-2"></i>
+            Add Recipe
           </a>
-
         </div>
 
+        <!-- ================= STATS ================= -->
 
-        <div class="col-md-4">
+        <div class="row g-4 mb-4">
+          <!-- Total Recipes -->
 
-          <a href="browse.html" class="action-card">
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
 
-            <div class="action-icon">
-              <i class="fa-solid fa-compass"></i>
+              <div>
+                <p>Total Recipes</p>
+
+                <h3 id="totalRecipes">12</h3>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <h6>Browse Recipes</h6>
-              <p>Discover new recipes.</p>
+          <!-- My Recipes -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+
+              <div>
+                <p>My Recipes</p>
+
+                <h3 id="myRecipesCount">6</h3>
+              </div>
             </div>
+          </div>
 
-            <i class="fa-solid fa-arrow-right ms-auto"></i>
+          <!-- Categories -->
 
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+
+              <div>
+                <p>Categories</p>
+
+                <h3>6</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Favorites -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+
+              <div>
+                <p>Favorites</p>
+
+                <h3>8</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= RECENT RECIPES ================= -->
+
+        <div class="section-header">
+          <div>
+            <span class="section-small"> Your latest recipes </span>
+
+            <h2>Recent Recipes</h2>
+          </div>
+
+          <a href="myRecipes.html" class="view-all">
+            View All
+            <i class="fa-solid fa-arrow-right ms-1"></i>
           </a>
-
         </div>
 
+        <div class="row g-4">
+          <!-- Recipe 1 -->
 
-        <div class="col-md-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80"
+                  alt="Pasta"
+                />
 
-          <a href="myRecipes.html" class="action-card">
+                <span class="category-badge"> Italian </span>
 
-            <div class="action-icon">
-              <i class="fa-solid fa-book-open"></i>
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <h5>Creamy Pasta</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    30 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+                </div>
+
+                <small class="text-muted"> Added recently </small>
+              </div>
             </div>
+          </div>
 
+          <!-- Recipe 2 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                  alt="Biryani"
+                />
+
+                <span class="category-badge"> Pakistani </span>
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <h5>Chicken Biryani</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    50 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+                </div>
+
+                <small class="text-muted"> Added recently </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe 3 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+                  alt="Chocolate Cake"
+                />
+
+                <span class="category-badge"> Desserts </span>
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <h5>Chocolate Cake</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    45 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Medium
+                  </span>
+                </div>
+
+                <small class="text-muted"> Added recently </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe 4 -->
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="recipe-card">
+              <div class="recipe-image">
+                <img
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
+                  alt="Healthy Salad"
+                />
+
+                <span class="category-badge"> Healthy </span>
+
+                <button class="favorite-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+
+              <div class="recipe-body">
+                <h5>Fresh Garden Salad</h5>
+
+                <div class="recipe-info">
+                  <span>
+                    <i class="fa-regular fa-clock"></i>
+                    15 mins
+                  </span>
+
+                  <span>
+                    <i class="fa-solid fa-signal"></i>
+                    Easy
+                  </span>
+                </div>
+
+                <small class="text-muted"> Added recently </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <div class="quick-section">
+          <div class="section-header">
             <div>
-              <h6>My Recipes</h6>
-              <p>Manage your recipes.</p>
+              <span class="section-small"> Quick access </span>
+
+              <h2>Quick Actions</h2>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <a href="addRecipe.html" class="action-card">
+                <div class="action-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div>
+                  <h6>Add New Recipe</h6>
+                  <p>Share a delicious recipe.</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right ms-auto"></i>
+              </a>
             </div>
 
-            <i class="fa-solid fa-arrow-right ms-auto"></i>
+            <div class="col-md-4">
+              <a href="browse.html" class="action-card">
+                <div class="action-icon">
+                  <i class="fa-solid fa-compass"></i>
+                </div>
 
-          </a>
+                <div>
+                  <h6>Browse Recipes</h6>
+                  <p>Discover new recipes.</p>
+                </div>
 
+                <i class="fa-solid fa-arrow-right ms-auto"></i>
+              </a>
+            </div>
+
+            <div class="col-md-4">
+              <a href="myRecipes.html" class="action-card">
+                <div class="action-icon">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+                  <h6>My Recipes</h6>
+                  <p>Manage your recipes.</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right ms-auto"></i>
+              </a>
+            </div>
+          </div>
         </div>
-
       </div>
+    </main>
 
-    </div>
+    <!-- ================= FOOTER ================= -->
 
-  </div>
+    <footer class="footer">
+      <div class="container text-center">
+        <h5>
+          <i class="fa-solid fa-utensils me-2"></i>
+          RecipeShare
+        </h5>
 
-</main>
+        <p>Discover, create and share delicious recipes.</p>
 
+        <p class="mb-0">© 2026 RecipeShare. All rights reserved.</p>
+      </div>
+    </footer>
 
-<!-- ================= FOOTER ================= -->
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.js"></script>
 
-<footer class="footer">
+    <!-- Supabase cdn -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-  <div class="container text-center">
+    <!-- supabase -->
+    <script src="../js/supabase.js"></script>
 
-    <h5>
-      <i class="fa-solid fa-utensils me-2"></i>
-      RecipeShare
-    </h5>
+    <!-- Dashboard JS -->
+    <script src="../js/dashboard.js"></script>
 
-    <p>
-      Discover, create and share delicious recipes.
-    </p>
-
-    <p class="mb-0">
-      © 2026 RecipeShare. All rights reserved.
-    </p>
-
-  </div>
-
-</footer>
-
-
-<!-- Bootstrap -->
-<script src="../js/bootstrap.js"></script>
-
-<!-- Supabase -->
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-
-<script src="../js/supabase.js"></script>
-
-<!-- Dashboard JS -->
-<script src="../js/dashboard.js"></script>
-
-</body>
+    <!-- logout -->
+    <script src="../js/logout.js"></script>
+  </body>
 </html>

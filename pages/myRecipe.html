@@ -1,0 +1,261 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RecipeShare | My Recipes</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/myRecipes.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold fs-4" href="home.html">
+        <i class="fa-solid fa-utensils me-2"></i>
+        Recipe<span>Share</span>
+      </a>
+
+      <!-- Mobile Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <ul class="navbar-nav mx-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="browse.html">
+              Browse
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="myRecipes.html">
+              My Recipes
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="addRecipe.html">
+              Add Recipe
+            </a>
+          </li>
+
+        </ul>
+
+
+        <!-- Profile -->
+        <div class="dropdown profile-dropdown">
+
+          <button
+            class="btn profile-btn d-flex align-items-center gap-2"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+
+            <span id="profileInitial">H</span>
+
+            <span id="profileName">Hafsa</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+
+            <li>
+              <a class="dropdown-item" href="profile.html">
+                <i class="fa-solid fa-user me-2"></i>
+                Profile
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="myRecipes.html">
+                <i class="fa-solid fa-utensils me-2"></i>
+                My Recipes
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <button
+                class="dropdown-item text-danger"
+                id="logoutBtn"
+              >
+                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                Logout
+              </button>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ================= PAGE HEADER ================= -->
+
+  <section class="page-header">
+
+    <div class="container">
+
+      <div class="text-center">
+
+        <span class="small-title">
+          <i class="fa-solid fa-utensils me-1"></i>
+          Your Collection
+        </span>
+
+        <h1 class="fw-bold mt-2">
+          My Recipes
+        </h1>
+
+        <p class="text-muted mb-0">
+          Manage and share all the recipes you have created.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= RECIPES ================= -->
+
+  <section class="recipes-section">
+
+    <div class="container">
+
+      <!-- Top Row -->
+
+      <div class="d-flex flex-column flex-sm-row
+                  align-items-sm-center
+                  justify-content-between
+                  gap-3 mb-4">
+
+        <div>
+
+          <h4 class="fw-bold mb-1">
+            My Recipes
+          </h4>
+
+          <p class="text-muted mb-0">
+            Your latest recipes appear first.
+          </p>
+
+        </div>
+
+
+        <a
+          href="addRecipe.html"
+          class="btn btn-warning text-white"
+        >
+
+          <i class="fa-solid fa-plus me-2"></i>
+          Add Recipe
+
+        </a>
+
+      </div>
+
+
+      <!-- Dynamic Recipes -->
+
+      <div class="row" id="myRecipes">
+
+        <!-- JavaScript recipes yahan show karega -->
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="container text-center">
+
+      <h5 class="fw-bold">
+        <i class="fa-solid fa-utensils me-2"></i>
+        RecipeShare
+      </h5>
+
+      <p>
+        Discover, create and share delicious recipes.
+      </p>
+
+      <p class="mb-0">
+        © 2026 RecipeShare. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="../js/bootstrap.js"></script>
+
+  <!-- Supabase -->
+  <script src="../js/supabase.js"></script>
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- My Recipes JS -->
+  <script src="../js/myRecipes.js"></script>
+
+</body>
+
+</html>
+```
