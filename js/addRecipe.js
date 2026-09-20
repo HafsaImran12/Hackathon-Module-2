@@ -1,15 +1,15 @@
-const recipeForm = document.getElementById("recipeForm");
+const recipeForm = document.querySelector("#recipeForm");
 
-const recipeTitle = document.getElementById("recipeTitle");
-const recipeDescription = document.getElementById("recipeDescription");
-const category = document.getElementById("category");
-const cookingTime = document.getElementById("cookingTime");
-const ingredients = document.getElementById("ingredients");
-const instructions = document.getElementById("instructions");
+const recipeTitle = document.querySelector("#recipeTitle");
+const recipeDescription = document.querySelector("#recipeDescription");
+const category = document.querySelector("#category");
+const cookingTime = document.querySelector("#cookingTime");
+const ingredients = document.querySelector("#ingredients");
+const instructions = document.querySelector("#instructions");
 
-const recipeImage = document.getElementById("recipeImage");
-const imagePreview = document.getElementById("imagePreview");
-const chooseImageBtn = document.getElementById("chooseImageBtn");
+const recipeImage = document.querySelector("#recipeImage");
+const imagePreview = document.querySelector("#imagePreview");
+const chooseImageBtn = document.querySelector("#chooseImageBtn");
 
 
 let profileName = document.querySelector("#profileName");
@@ -254,7 +254,7 @@ recipeForm.addEventListener("submit", async (e) => {
       confirmButtonText: "My Recipes"
     }).then(() => {
 
-      window.location.href = "./pages/myRecipes.html";
+      window.location.href = "./pages/myRecipe.html";
 
     });
 

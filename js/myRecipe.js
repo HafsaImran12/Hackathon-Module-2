@@ -1,5 +1,6 @@
 let profileName = document.querySelector("#profileName");
 let profileInitial = document.querySelector("#profileInitial");
+let myRecipes = document.querySelector("#myRecipes");
 
 async function getUser() {
   console.log("getuser");
@@ -33,3 +34,11 @@ async function getUser() {
 
 getUser();
 
+
+
+async function recipe() {
+    console.log("recipe");
+    
+}
+
+recipe()
