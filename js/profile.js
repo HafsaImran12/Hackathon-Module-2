@@ -36,4 +36,72 @@ async function getUser() {
   }
 }
 
-getUser();``
+getUser();
+
+async function getTotalRecipes() {
+  const {
+    count,
+    error
+  } = await client
+    .from("recipes")
+    .select("*", {
+      count: "exact",
+      head: true
+    });
+
+  if (error) {
+    console.log(
+      "Total recipes error:",
+      error.message
+    );
+    return;
+  }
+
+  document.querySelector(
+    "#totalRecipes"
+  ).innerHTML = count || 0;
+}
+
+getTotalRecipes()
+
+
+// ================= MY RECIPES COUNT =================
+
+async function getMyRecipesCount() {
+
+  // Get logged-in user
+  const {
+    data: { user },
+    error: userError
+  } = await client.auth.getUser();
+
+  if (userError || !user) {
+    console.log("User not found");
+    return;
+  }
+
+  // Count user's recipes
+  const {
+    count,
+    error
+  } = await client
+    .from("recipes")
+    .select("*", {
+      count: "exact",
+      head: true
+    })
+    .eq("user_id", user.id);
+
+  if (error) {
+    console.log("My Recipes Count Error:", error.message);
+    return;
+  }
+
+  // Show count in HTML
+  const myRecipesCount = document.querySelector("#myRecipesCount");
+
+  if (myRecipesCount) {
+    myRecipesCount.innerHTML = count || 0;
+  }
+}
+getMyRecipesCount()

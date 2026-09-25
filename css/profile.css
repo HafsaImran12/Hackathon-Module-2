@@ -142,40 +142,59 @@ body {
 
 /* ================= STATS ================= */
 
-.profile-stats {
-  padding: 25px 0;
+.stat-card {
+  background: white;
 
-  border-bottom: 1px solid #eee;
+  border: 1px solid #eee;
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  height: 100%;
+
+  transition: 0.2s;
 }
 
-.stat-box {
-  background: #fffaf0;
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
 
-  border: 1px solid #f8e8bd;
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
 
   border-radius: 10px;
 
-  padding: 18px;
-
-  text-align: center;
-}
-
-.stat-box i {
+  background: #fff3cd;
   color: #f59e0b;
 
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
 }
 
-.stat-box h4 {
-  margin: 7px 0 2px;
+.stat-card p {
+  color: #777;
 
-  font-size: 22px;
+  margin: 0 0 3px;
 }
 
-.stat-box p {
+.stat-card h3 {
+  font-size: 24px;
+
   margin: 0;
 
-  color: #777;
+  font-weight: 700;
 }
 
 /* ================= PERSONAL INFO ================= */
