@@ -29,9 +29,9 @@ async function loadProfile() {
     const fullName = `${firstName} ${lastName}`.trim();
 
     if (fullName) {
-      document.getElementById("profileName").textContent = fullName;
+      document.querySelector("#profileName").textContent = fullName;
 
-      document.getElementById("profileInitial").textContent = firstName
+      document.querySelector("#profileInitial").textContent = firstName
         .charAt(0)
         .toUpperCase();
     }
@@ -160,7 +160,7 @@ function displayRecipe(recipe, ingredients) {
   recipeDetails.innerHTML = `
     <!-- Back -->
     <a
-      href="./browse.html"
+      href="./dashboard.html"
       class="back-link"
     >
       <i class="fa-solid fa-arrow-left me-2"></i>
