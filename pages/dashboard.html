@@ -198,7 +198,7 @@
           </div>
         </div>
 
-        <!-- ================= RECENT RECIPES ================= -->
+        <!-- ================= RECENT Dynaic RECIPES ================= -->
 
         <div class="section-header">
           <div>
@@ -213,154 +213,8 @@
           </a>
         </div>
 
-        <div class="row g-4">
-          <!-- Recipe 1 -->
+        <div class="row g-4" id="recentRecipes">
 
-          <div class="col-sm-6 col-lg-3">
-            <div class="recipe-card">
-              <div class="recipe-image">
-                <img
-                  src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=80"
-                  alt="Pasta"
-                />
-
-                <span class="category-badge"> Italian </span>
-
-                <button class="favorite-btn">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-
-              <div class="recipe-body">
-                <h5>Creamy Pasta</h5>
-
-                <div class="recipe-info">
-                  <span>
-                    <i class="fa-regular fa-clock"></i>
-                    30 mins
-                  </span>
-
-                  <span>
-                    <i class="fa-solid fa-signal"></i>
-                    Easy
-                  </span>
-                </div>
-
-                <small class="text-muted"> Added recently </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Recipe 2 -->
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="recipe-card">
-              <div class="recipe-image">
-                <img
-                  src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
-                  alt="Biryani"
-                />
-
-                <span class="category-badge"> Pakistani </span>
-
-                <button class="favorite-btn">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-
-              <div class="recipe-body">
-                <h5>Chicken Biryani</h5>
-
-                <div class="recipe-info">
-                  <span>
-                    <i class="fa-regular fa-clock"></i>
-                    50 mins
-                  </span>
-
-                  <span>
-                    <i class="fa-solid fa-signal"></i>
-                    Medium
-                  </span>
-                </div>
-
-                <small class="text-muted"> Added recently </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Recipe 3 -->
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="recipe-card">
-              <div class="recipe-image">
-                <img
-                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
-                  alt="Chocolate Cake"
-                />
-
-                <span class="category-badge"> Desserts </span>
-
-                <button class="favorite-btn">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-
-              <div class="recipe-body">
-                <h5>Chocolate Cake</h5>
-
-                <div class="recipe-info">
-                  <span>
-                    <i class="fa-regular fa-clock"></i>
-                    45 mins
-                  </span>
-
-                  <span>
-                    <i class="fa-solid fa-signal"></i>
-                    Medium
-                  </span>
-                </div>
-
-                <small class="text-muted"> Added recently </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Recipe 4 -->
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="recipe-card">
-              <div class="recipe-image">
-                <img
-                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
-                  alt="Healthy Salad"
-                />
-
-                <span class="category-badge"> Healthy </span>
-
-                <button class="favorite-btn">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-
-              <div class="recipe-body">
-                <h5>Fresh Garden Salad</h5>
-
-                <div class="recipe-info">
-                  <span>
-                    <i class="fa-regular fa-clock"></i>
-                    15 mins
-                  </span>
-
-                  <span>
-                    <i class="fa-solid fa-signal"></i>
-                    Easy
-                  </span>
-                </div>
-
-                <small class="text-muted"> Added recently </small>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- ================= QUICK ACTIONS ================= -->
@@ -447,6 +301,9 @@
 
     <!-- supabase -->
     <script src="../js/supabase.js"></script>
+
+    <!-- recipe details JS -->
+    <script src="../js/recipeDetails.js"></script>
 
     <!-- Dashboard JS -->
     <script src="../js/dashboard.js"></script>

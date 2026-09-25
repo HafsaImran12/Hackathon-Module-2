@@ -44,10 +44,10 @@ async function getUser() {
 
   if (data) {
 
-    const firstName = data.first_name || "";
-    const lastName = data.last_name || "";
+    let firstName = data.first_name || "";
+    let lastName = data.last_name || "";
 
-    const fullName =
+    let fullName =
       `${firstName} ${lastName}`.trim();
 
 
@@ -67,14 +67,12 @@ async function getUser() {
         .toUpperCase();
     }
 
-    userName.innerHTML = fullName
-
 
     // Welcome name
 
     if (userName) {
       userName.innerHTML =
-        firstName || "User";
+        fullName || "User";
     }
 
   }
@@ -559,5 +557,5 @@ async function dashboard() {
 
 }
 
-
+getRecentRecipes()
 dashboard();

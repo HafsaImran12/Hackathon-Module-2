@@ -60,7 +60,7 @@ async function getUser() {
 // ================= RECIPES CONTAINER =================
 
 const myRecipes =
-  document.getElementById("myRecipes");
+  document.querySelector("#myRecipes");
 
 
 // ================= GET MY RECIPES =================

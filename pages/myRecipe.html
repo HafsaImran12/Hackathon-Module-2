@@ -25,25 +25,22 @@
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand fw-bold fs-4" href="./home.html">
+        <a class="navbar-brand fw-bold fs-4" href="home.html">
           <i class="fa-solid fa-utensils me-2"></i>
           Recipe<span>Share</span>
         </a>
 
-        <!-- Mobile Button -->
+        <!-- Mobile Toggle -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarMenu"
-          aria-controls="navbarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar -->
+        <!-- Navbar Menu -->
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -51,19 +48,20 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./browse.html"> Browse </a>
+              <a class="nav-link" href="./browse.html"> Browse Recipes </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./dashboard.html"> Dashboard </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link active" href="./myRecipe.html"> My Recipes </a>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="./addRecipe.html"> Add Recipe </a>
-            </li>
           </ul>
 
           <!-- Profile -->
+
           <div class="dropdown profile-dropdown">
             <button
               class="btn profile-btn d-flex align-items-center gap-2"
@@ -79,14 +77,14 @@
 
             <ul class="dropdown-menu dropdown-menu-end shadow">
               <li>
-                <a class="dropdown-item" href="./profile.html">
+                <a class="dropdown-item" href="profile.html">
                   <i class="fa-solid fa-user me-2"></i>
                   Profile
                 </a>
               </li>
 
               <li>
-                <a class="dropdown-item" href="./myRecipe.html">
+                <a class="dropdown-item" href="myRecipes.html">
                   <i class="fa-solid fa-utensils me-2"></i>
                   My Recipes
                 </a>
