@@ -5,6 +5,58 @@ const recipeId = urlParams.get("id");
 
 // ================= LOAD PROFILE =================
 
+
+async function getUser() {
+  try {
+    const {
+      data: { user },
+      error: authError
+    } = await client.auth.getUser();
+
+    if (authError || !user) {
+      window.location.href = "login.html";
+      return null;
+    }
+    console.log("Logged in user:", user.id);
+
+    const {
+      data,
+      error
+    } = await client
+      .from("user_data")
+      .select("first_name, last_name")
+      .eq("user_id", user.id)
+      .single();
+
+    if (error) {
+   console.log("Profile error:", error.message);
+      return user;
+    }
+
+    if (data) {
+      let firstName = data.first_name || "";
+      let lastName = data.last_name || "";
+      let name =
+        `${firstName} ${lastName}`.trim();
+      if (profileName) {
+        profileName.textContent = name;
+      }
+     if (profileInitial) {
+        profileInitial.textContent =
+          `${firstName[0] || ""}${lastName[0] || ""}`.toUpperCase();
+
+      }
+
+    }
+  return user;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+
+}
+getUser()
+
 async function loadProfile() {
   const {
     data: { user },
